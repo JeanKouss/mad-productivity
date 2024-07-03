@@ -16,16 +16,16 @@ const SETTINGS_SAVE_NAME : String = "Settings.tres"
 
 signal view_changed(_name, _button, _input_field)
 signal theme_changed
-signal settings_changed
+signal changed
 signal track_item(_name)
 signal toggle_time_tracking_panel(really)
 signal update_view_info(text)
 
-export(Color) var btn_active_colour : Color
-export(Color) var btn_inactive_colour : Color
+@export var btn_active_colour: Color
+@export var btn_inactive_colour: Color
 
-export(Color) var custom_check_box_active : Color
-export(Color) var custom_check_box_inactive : Color
+@export var custom_check_box_active: Color
+@export var custom_check_box_inactive: Color
 
 
 var views : Array
@@ -45,7 +45,7 @@ var ui_theme : ThemeResource
 var windows_sdt_bias : int
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		quit()
 
 func _ready() -> void:
@@ -59,7 +59,7 @@ func _ready() -> void:
 	
 	
 func check_folders() -> void:
-	var dir : Directory = Directory.new()
+	var dir : DirAccess = DirAccess.open("user://")
 	check_directory(dir, NOTES_SAVE_PATH)
 	check_directory(dir, TIMETRACKS_SAVE_PATH)
 	check_directory(dir, TODOS_SAVE_PATH)
@@ -68,7 +68,7 @@ func check_folders() -> void:
 	check_resource(dir, SETTINGS_SAVE_PATH + SETTINGS_SAVE_NAME, RESOURCES.SETTINGS)
 
 
-func check_directory(dir : Directory, path : String) -> void:
+func check_directory(dir : DirAccess, path : String) -> void:
 	if dir.dir_exists(path):
 		print("directory exists!")
 	else:
@@ -76,7 +76,7 @@ func check_directory(dir : Directory, path : String) -> void:
 		dir.make_dir(path)
 		
 		
-func check_resource(dir: Directory, path : String, resource_id : int) -> void:
+func check_resource(dir: DirAccess, path : String, resource_id : int) -> void:
 	if dir.file_exists(path):
 		print("Resource exists!")
 	else:
@@ -93,7 +93,7 @@ func check_resource(dir: Directory, path : String, resource_id : int) -> void:
 			RESOURCES.SETTINGS:
 				resource = SettingsResource.new()
 				
-		var err : int = ResourceSaver.save(path, resource)
+		var _err : int = ResourceSaver.save(resource, path)
 		
 
 func load_settings() -> void:
@@ -101,18 +101,23 @@ func load_settings() -> void:
 
 
 func init_window() -> void:
+	if not settings_res :
+		# TODO : Force full size
+		return
 	if settings_res.remember_window_settings:
-		OS.window_size = settings_res.window_size
-		OS.window_position = settings_res.window_pos
+		get_window().size = settings_res.window_size
+		get_window().position = settings_res.window_pos
 	else:
-		OS.center_window()
+		#OS.center_window()
+		# TODO : Force full size
+		pass
 
 
 func load_theme_res() -> void:
-	var dir : Directory = Directory.new()
+	var dir : DirAccess = DirAccess.open("user://")
 	if dir.file_exists(settings_res.THEME_SAVE_PATH):
 		ui_theme = load(settings_res.THEME_SAVE_PATH)
-	else:
+	if not ui_theme : # if ui_theme was not loaded form THEME_SAVE_PATH
 		ui_theme = load("res://Assets/Themes/Resources/DarkGrey.tres")
 
 
@@ -213,7 +218,7 @@ func quit() -> void:
 
 
 func get_date_as_numbers(_custom : Dictionary) -> String:
-	var date : Dictionary = OS.get_datetime()
+	var date : Dictionary = Time.get_datetime_dict_from_system()
 	if _custom.size() > 0:
 		date = _custom
 	var date_digits : String = str(date.day) + "/" + str(date.month) + "/" + str(date.year)
@@ -221,7 +226,7 @@ func get_date_as_numbers(_custom : Dictionary) -> String:
 	return date_digits
 
 func get_full_date_as_string(_custom : Dictionary) -> String:
-	var date : Dictionary = OS.get_datetime()
+	var date : Dictionary = Time.get_datetime_dict_from_system()
 	if _custom.size() > 0:
 		date = _custom
 	var text : String = DAYS[date.weekday - 1] + ", " + str(date.day)+ " " + MONTHS[date.month - 1] + " " + str(date.year)
@@ -229,7 +234,7 @@ func get_full_date_as_string(_custom : Dictionary) -> String:
 
 
 func get_date_and_time_with_underscores(_custom : Dictionary) -> String:
-	var date : Dictionary = OS.get_datetime()
+	var date : Dictionary = Time.get_datetime_dict_from_system()
 	if _custom.size() > 0:
 		date = _custom
 	var text : String = str(date.day) + "_" + str(date.month) + "_" + str(date.year) + "_" + str(date.hour) + "_" + str(date.minute) + "_" + str(date.second)
@@ -244,7 +249,7 @@ func get_time_with_semicoloumns(_custom : Dictionary, _show_seconds: bool, _use_
 		return get_12h_time(_custom,_show_seconds)
 	
 func get_12h_time(_custom : Dictionary,_use_seconds: bool) -> String:
-	var date : Dictionary = OS.get_time()
+	var date : Dictionary = Time.get_time_dict_from_system()
 	if _custom.size() > 0:
 		date = _custom
 	var meridian
@@ -262,7 +267,7 @@ func get_12h_time(_custom : Dictionary,_use_seconds: bool) -> String:
 
 
 func get_24h_time(_custom: Dictionary,_show_seconds: bool) -> String:
-	var date : Dictionary = OS.get_time()
+	var date : Dictionary = Time.get_time_dict_from_system()
 	if _custom.size() > 0:
 		date = _custom
 	var hour : String = str(date.hour)
@@ -286,7 +291,7 @@ func get_datetime_from_unix_time(_unixTime : int) -> String:
 	# timezone and dst
 	var bias = Defaults.get_time_zone_bias()
 	_unixTime += bias * 60
-	return get_date_with_time_string(OS.get_datetime_from_unix_time(_unixTime))
+	return get_date_with_time_string(Time.get_datetime_dict_from_unix_time(_unixTime))
 
 
 func get_formatted_time_from_seconds(_secs : int) -> String:
@@ -313,8 +318,8 @@ func user_save() -> void:
 	
 	# save the last window position
 	if settings_res.remember_window_settings:
-		settings_res.window_pos = OS.window_position
-		settings_res.window_size = OS.window_size
+		settings_res.window_pos = get_window().position
+		settings_res.window_size = get_window().size
 		
 	if settings_res.remember_last_session_view:
 		settings_res.last_session_view = active_view
@@ -329,17 +334,17 @@ func user_save() -> void:
 func save_note_resource(note : NoteResource) -> int:
 #	var saver : ResourceSaver = ResourceSaver.new()
 	if !note: return 0
-	var err : int = ResourceSaver.save(NOTES_SAVE_PATH + note.save_name + ".tres", note)
+	var err : int = ResourceSaver.save(note, NOTES_SAVE_PATH + note.save_name + ".tres")
 	return err
 
 
 func save_timetrack_resource(tt : TimeTrackResource) -> int:
-	var err : int = ResourceSaver.save(TIMETRACKS_SAVE_PATH + TIMETRACKS_SAVE_NAME, tt)
+	var err : int = ResourceSaver.save(tt, TIMETRACKS_SAVE_PATH + TIMETRACKS_SAVE_NAME)
 	return err
 	
 	
 func save_todo_resource(td : ToDoResource) -> int:
-	var err : int = ResourceSaver.save(TODOS_SAVE_PATH + TODOS_SAVE_NAME, td)
+	var err : int = ResourceSaver.save(td, TODOS_SAVE_PATH + TODOS_SAVE_NAME)
 	return err
 
 
@@ -348,7 +353,7 @@ func save_settings_resource(sr : SettingsResource = null) -> int:
 	var res : SettingsResource = settings_res
 	if sr != null:
 		res = sr
-	var err : int = ResourceSaver.save(SETTINGS_SAVE_PATH + SETTINGS_SAVE_NAME, res)
+	var err : int = ResourceSaver.save(res, SETTINGS_SAVE_PATH + SETTINGS_SAVE_NAME)
 	return err
 
 
@@ -358,7 +363,7 @@ func change_body_font_size(index : int) -> void:
 		size = 14
 	elif index == 2:
 		size = 18
-	var font_res : DynamicFont = load("res://Assets/Fonts/Roboto12.tres")
+	var font_res : FontFile = load("res://Assets/Fonts/Roboto12.tres")
 	font_res.size = size
 	save_settings_resource()
 
@@ -366,14 +371,14 @@ func change_body_font_size(index : int) -> void:
 func set_windows_dst_bias() -> void:
 	if OS.get_name() == "Windows":
 		var output = []
-		OS.execute('WMIC.exe', ["OS","Get","CurrentTimeZone"],true, output)
+		OS.execute('WMIC.exe', ["OS","Get","CurrentTimeZone"], output)
 		windows_sdt_bias = int(output[0].split("\n")[1])
 
 func get_time_zone_bias() -> int:
 	if OS.get_name() == "Windows":
 		return windows_sdt_bias
 	else:
-		return OS.get_time_zone_info()['bias']
+		return Time.get_time_zone_from_system()['bias']
 
 
 func _on_Timer_timeout() -> void:

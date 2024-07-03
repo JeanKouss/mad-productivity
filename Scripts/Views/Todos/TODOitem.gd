@@ -18,7 +18,7 @@ func update_theme() -> void:
 
 
 func update_self(_text : String, _done : bool, _date : Dictionary, _idx : int) -> void:
-	$HBoxContainer/CheckBox.pressed = _done
+	$HBoxContainer/CheckBox.button_pressed = _done
 	$HBoxContainer/Task.text = _text
 	$HBoxContainer/Date.text = Defaults.get_date_with_time_string(_date)
 

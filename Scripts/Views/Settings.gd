@@ -1,6 +1,6 @@
 extends Control
 
-export var title : String
+@export var title : String
 
 var res : SettingsResource
 
@@ -34,25 +34,25 @@ func _ready() -> void:
 
 func set_up_btns() -> void:
 	$HBX/C/VBoxContainer/FontSize/Option.select(res.font_size)
-	$HBX/C/VBoxContainer/SecsDashboard/Option.pressed = res.show_secs_dash
-	$HBX/C/VBoxContainer/TimeFormatDashboard/Option.pressed = res.use_24h_time
-	$HBX/C/VBoxContainer/WindowPos/Option.pressed = res.remember_window_settings
-	$HBX/C/VBoxContainer/HidDPI/Option.pressed = res.hidpi
+	$HBX/C/VBoxContainer/SecsDashboard/Option.button_pressed = res.show_secs_dash
+	$HBX/C/VBoxContainer/TimeFormatDashboard/Option.button_pressed = res.use_24h_time
+	$HBX/C/VBoxContainer/WindowPos/Option.button_pressed = res.remember_window_settings
+	$HBX/C/VBoxContainer/HidDPI/Option.button_pressed = res.hidpi
 	$HBX/C/VBoxContainer/LongPause/Option.value = res.pomo_long_pause_length
 	$HBX/C/VBoxContainer/LongPauseFreq/Option.value = res.pomo_long_pause_freq
 	$HBX/C/VBoxContainer/ShortPause/Option.value = res.pomo_short_pause_length
 	$HBX/C/VBoxContainer/WorkTimeLength/Option.value = res.pomo_work_time_length
-	$HBX/C/VBoxContainer/WindowPos2/Option.pressed = res.remember_last_session_view
-	$HBX/C/VBoxContainer/ShowDate/Option.pressed = res.show_date
-	$HBX/C/VBoxContainer/Borderless/Option.pressed = res.borderless
-	$HBX/C/VBoxContainer/ParticleEffect/Option.pressed = res.particle_effect
+	$HBX/C/VBoxContainer/WindowPos2/Option.button_pressed = res.remember_last_session_view
+	$HBX/C/VBoxContainer/ShowDate/Option.button_pressed = res.show_date
+	$HBX/C/VBoxContainer/Borderless/Option.button_pressed = res.borderless
+	$HBX/C/VBoxContainer/ParticleEffect/Option.button_pressed = res.particle_effect
 	# notes textedit
-	$HBX/C/VBoxContainer/LineNumbers/Option.pressed = res.line_numbers
-	$HBX/C/VBoxContainer/HighlightLine/Option.pressed = res.highlight_current_line
-	$HBX/C/VBoxContainer/Minimap/Option.pressed = res.minimap
-	$HBX/C/VBoxContainer/SyntaxHighlighting/Option.pressed = res.syntax_highlighting
-	$HBX/C/VBoxContainer/Tabs/Option.pressed = res.draw_tabs
-	$HBX/C/VBoxContainer/Spaces/Option.pressed = res.draw_spaces
+	$HBX/C/VBoxContainer/LineNumbers/Option.button_pressed = res.line_numbers
+	$HBX/C/VBoxContainer/HighlightLine/Option.button_pressed = res.highlight_current_line
+	$HBX/C/VBoxContainer/Minimap/Option.button_pressed = res.minimap
+	$HBX/C/VBoxContainer/SyntaxHighlighting/Option.button_pressed = res.syntax_highlighter
+	$HBX/C/VBoxContainer/TabBar/Option.button_pressed = res.draw_tabs
+	$HBX/C/VBoxContainer/Spaces/Option.button_pressed = res.draw_spaces
 
 
 func update_quotes() -> void:
@@ -60,7 +60,7 @@ func update_quotes() -> void:
 		var new = $HBX/C/VBoxContainer/QuoteBox.duplicate()
 		new.get_child(0).text = str(i)
 		new.get_child(2).text = res.quote_list[i]
-		new.get_child(1).connect("pressed", self, "on_quote_delete_pressed", [i])
+		new.get_child(1).connect("pressed", Callable(self, "on_quote_delete_pressed").bind(i))
 		new.name = "quote" + str(i)
 		new.show()
 		$HBX/C/VBoxContainer.add_child(new)
@@ -73,7 +73,7 @@ func make_new_quote() -> void:
 	var new = $HBX/C/VBoxContainer/QuoteBox.duplicate()
 	new.get_child(0).text = str(idx)
 	new.get_child(1).text = "New Quote"
-	new.get_child(2).connect("pressed", self, "on_quote_delete_pressed", [idx])
+	new.get_child(2).connect("pressed", Callable(self, "on_quote_delete_pressed").bind(idx))
 	new.name = "quote" + str(idx)
 	new.show()
 	$HBX/C/VBoxContainer.add_child(new)
@@ -100,7 +100,7 @@ func update_view_text() -> void:
 
 func toggle_colour_panel(really : bool) -> void:
 	$Tween.remove_all()
-	$Tween.interpolate_property($HBX/Panel, "rect_min_size:x", $HBX/Panel.rect_min_size.x, 400 * float(really), 0.75, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
+	$Tween.interpolate_property($HBX/Panel, "custom_minimum_size:x", $HBX/Panel.custom_minimum_size.x, 400 * float(really), 0.75, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.interpolate_property($HBX/Panel, "modulate:a", $HBX/Panel.modulate.a, 1.0 * float(really), 0.75, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.start()
 
@@ -168,7 +168,7 @@ func _on_ShowDateOption_toggled(button_pressed: bool) -> void:
 
 
 func _on_BorderlessOption_toggled(button_pressed: bool) -> void:
-	OS.window_borderless = button_pressed
+	get_window().borderless = button_pressed
 	res.borderless = button_pressed
 
 
@@ -185,7 +185,7 @@ func _on_MinimapOption_toggled(button_pressed: bool) -> void:
 
 
 func _on_SyntaxHighlightingOption_toggled(button_pressed: bool) -> void:
-	res.syntax_highlighting = button_pressed
+	res.syntax_highlighter = button_pressed
 
 
 func _on_TabsOption_toggled(button_pressed: bool) -> void:
@@ -230,4 +230,4 @@ func _on_ColorPicker_show_colour_panel(really) -> void:
 
 func _on_ParticleEffect_toggled(button_pressed: bool) -> void:
 	res.particle_effect = button_pressed
-	Defaults.emit_signal("settings_changed")
+	Defaults.emit_signal("changed")

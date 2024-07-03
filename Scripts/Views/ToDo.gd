@@ -1,6 +1,6 @@
 extends Control
 
-export var title : String
+@export var title : String
 
 var res: ToDoResource
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 	$VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem.hide()
 	$VBoxContainer/HSplitContainer/PanelR/NewTodoBtn.hide()
 	$VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/ProjectLineEdit.hide()
-	Defaults.connect("theme_changed", self, "on_theme_changed")
+	Defaults.connect("theme_changed", Callable(self, "on_theme_changed"))
 	update_theme()
 	res = load(Defaults.TODOS_SAVE_PATH + Defaults.TODOS_SAVE_NAME)
 	load_projects()
@@ -64,10 +64,10 @@ func add_new_task_visual(task_dic : Dictionary) -> void:
 	# get it!
 	var new : Panel = $VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem.duplicate()
 	# signals
-	new.connect("task_text_changed", self, "_on_task_text_changed")
-	new.connect("task_set_done", self, "_on_task_set_done")
-	new.connect("task_delete", self, "_on_task_delete")
-	new.connect("task_time_track", self, "_on_task_time_track")
+	new.connect("task_text_changed", Callable(self, "_on_task_text_changed"))
+	new.connect("task_set_done", Callable(self, "_on_task_set_done"))
+	new.connect("task_delete", Callable(self, "_on_task_delete"))
+	new.connect("task_time_track", Callable(self, "_on_task_time_track"))
 	
 	#setup
 #	print(task_dic)
@@ -86,7 +86,7 @@ func create_project_button(_p_name : String = "", id: int = -1) -> void:
 	new.id = id
 #	new.set_percent_done(res.get_percent_done(id))
 	new.call_deferred("set_percent_done", res.get_percent_done(id))
-	new.connect("delete_project", self, "on_delete_project")
+	new.connect("delete_project", Callable(self, "on_delete_project"))
 	$VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons.add_child(new)
 	new.show()
 	update_view_text()
@@ -104,7 +104,7 @@ func reset_tasks_view() -> void:
 	for i in $VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList.get_children():
 		if i.name != "TODOitem" and i.name != "ProjectLineEdit":
 			i.queue_free()
-	yield(get_tree(), "idle_frame")
+	await get_tree().idle_frame
 	update_view_text()
 	
 	
@@ -119,7 +119,7 @@ func update_task_text(idx : int, text : String) -> void:
 func update_task_done(idx : int, done : bool) -> void:
 	res.tasks[idx].done = done
 	if done:
-		res.tasks[idx].done_date = OS.get_datetime()
+		res.tasks[idx].done_date = Time.get_datetime_dict_from_system()
 	else:
 		res.tasks[idx].done_date = {}
 	update_percent_done(current_project_id, current_project_child_id)
@@ -140,7 +140,7 @@ func update_view_text() -> void:
 
 
 func _on_NewTask_pressed() -> void:
-	res.add_new_task($VBoxContainer/HBoxContainer/TODO/HBoxContainer/NewTaskName.text, false, OS.get_datetime(), {}, current_project_id)
+	res.add_new_task($VBoxContainer/HBoxContainer/TODO/HBoxContainer/NewTaskName.text, false, Time.get_datetime_dict_from_system(), {}, current_project_id)
 
 
 func _on_task_text_changed(_name : String, idx : int) -> void:
@@ -189,7 +189,7 @@ func _on_ProjectButton_selected_project(_name, index, child_id) -> void:
 
 func _on_NewTodoBtn_pressed() -> void:
 	print("Adding a new button")
-	var new_task : Dictionary = res.add_new_task("new_task", false, OS.get_datetime(), {}, current_project_id)
+	var new_task : Dictionary = res.add_new_task("new_task", false, Time.get_datetime_dict_from_system(), {}, current_project_id)
 	add_new_task_visual(new_task)
 
 

@@ -1,11 +1,11 @@
 extends Control
 
-export var title : String
+@export var title : String
 var midnight_check : Dictionary
 
 
 func _ready() -> void:
-	midnight_check = OS.get_time()
+	midnight_check = Time.get_time_dict_from_system()
 	update_time()
 	update_date()
 
@@ -26,7 +26,7 @@ func update_time() -> void:
 	$VBoxContainer/Time.text = Defaults.get_time_with_semicoloumns({},Defaults.settings_res.show_secs_dash,Defaults.settings_res.use_24h_time)
 		
 	#Update the date if we've gone over midnight
-	if OS.get_time().hour < midnight_check.hour:
+	if Time.get_time_dict_from_system().hour < midnight_check.hour:
 		update_date()
 	
 	
@@ -35,9 +35,9 @@ func update_date() -> void:
 
 
 func update_theme() -> void:
-	$VBoxContainer/Date.add_color_override("font_color", Defaults.ui_theme.text_color)
-	$VBoxContainer/Time.add_color_override("font_color", Defaults.ui_theme.text_color)
-	$VBoxContainer/Panel/WelcomeMessage.add_color_override("font_color", Defaults.ui_theme.text_color.inverted())
+	$VBoxContainer/Date.add_theme_color_override("font_color", Defaults.ui_theme.text_color)
+	$VBoxContainer/Time.add_theme_color_override("font_color", Defaults.ui_theme.text_color)
+	$VBoxContainer/Panel/WelcomeMessage.add_theme_color_override("font_color", Defaults.ui_theme.text_color.inverted())
 	$VBoxContainer/Panel/Next.modulate = Defaults.ui_theme.highlight_colour
 	$VBoxContainer/Panel/Next2.modulate = Defaults.ui_theme.highlight_colour
 

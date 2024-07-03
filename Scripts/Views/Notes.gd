@@ -1,6 +1,6 @@
 extends Control
 
-export var title : String
+@export var title : String
 var active_note : NoteResource
 var active_btn : Button
 
@@ -16,10 +16,10 @@ func _ready() -> void:
 	
 	
 func load_notes() -> void:
-	var dir : Directory = Directory.new()
+	var dir : DirAccess = DirAccess.open(Defaults.NOTES_SAVE_PATH)
 
-	if dir.open(Defaults.NOTES_SAVE_PATH) == OK:
-		dir.list_dir_begin()
+	if dir :
+		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		var file_name = dir.get_next()
 		while file_name != "":
 			if dir.current_is_dir():
@@ -39,7 +39,7 @@ func load_notes() -> void:
 	
 func select_note(which : int) -> void:
 	var button : Button = $VBoxContainer/HSplitContainer/Panel/ScrollContainer/NoteButtons.get_child(which)
-	button.pressed = true
+	button.button_pressed = true
 	_on_note_btn_clicked(button.res, button)
 	
 	
@@ -65,16 +65,16 @@ func add_button() -> void:
 	var res : NoteResource = NoteResource.new()
 	res.title = "New note"
 	res.text = "Put text here"
-	res.date_created = OS.get_datetime()
-	res.date_modified = OS.get_datetime()
+	res.date_created = Time.get_datetime_dict_from_system()
+	res.date_modified = Time.get_datetime_dict_from_system()
 	res.save_name = Defaults.get_date_and_time_with_underscores({}) + "_Note" + str(randi() % 256)
 	new_btn.res = res
 	new_btn.text = res.title
 	active_note = res
 	
-	new_btn.connect("button_down", self, "_on_note_btn_clicked", [res, new_btn])
-	new_btn.connect("start_time_track", self, "_on_start_time_track")
-	new_btn.connect("note_delete_pressed", self, "_on_note_btn_delete_clicked")
+	new_btn.connect("button_down", Callable(self, "_on_note_btn_clicked").bind(res, new_btn))
+	new_btn.connect("start_time_track", Callable(self, "_on_start_time_track"))
+	new_btn.connect("note_delete_pressed", Callable(self, "_on_note_btn_delete_clicked"))
 	$VBoxContainer/HSplitContainer/Panel/ScrollContainer/NoteButtons.add_child(new_btn)
 	new_btn.grab_click_focus()
 	
@@ -97,21 +97,21 @@ func update_text_edit() -> void:
 	te.draw_tabs = res.draw_tabs
 	te.draw_spaces = res.draw_spaces
 	te.highlight_all_occurrences = res.highlight_all_occurances
-	te.syntax_highlighting = res.syntax_highlighting
+	te.syntax_highlighter = SyntaxHighlighter.new() if res.syntax_highlighting else null
 	te.show_line_numbers = res.line_numbers
 
 
 func add_button_from_resource(res : NoteResource) -> void:
 	var new_btn : Button = $VBoxContainer/HSplitContainer/Panel/ScrollContainer/NoteButtons/DefaultButton.duplicate()
 	new_btn.visible = true
-	res.date_modified = OS.get_datetime()
+	res.date_modified = Time.get_datetime_dict_from_system()
 	new_btn.res = res
 	new_btn.text = res.title
 	active_note = res
 	
-	new_btn.connect("button_down", self, "_on_note_btn_clicked", [res, new_btn])
-	new_btn.connect("start_time_track", self, "_on_start_time_track")
-	new_btn.connect("note_delete_pressed", self, "_on_note_btn_delete_clicked")
+	new_btn.connect("button_down", Callable(self, "_on_note_btn_clicked").bind(res, new_btn))
+	new_btn.connect("start_time_track", Callable(self, "_on_start_time_track"))
+	new_btn.connect("note_delete_pressed", Callable(self, "_on_note_btn_delete_clicked"))
 	$VBoxContainer/HSplitContainer/Panel/ScrollContainer/NoteButtons.add_child(new_btn)
 	new_btn.grab_click_focus()
 
@@ -146,7 +146,7 @@ func _on_note_btn_clicked(_note : NoteResource, _btn : Button) -> void:
 	# saves the previously active note
 	if !_btn.deleting:
 		if active_note:
-			active_note.date_modified = OS.get_datetime()
+			active_note.date_modified = Time.get_datetime_dict_from_system()
 		save()
 	
 	if _btn.deleting:

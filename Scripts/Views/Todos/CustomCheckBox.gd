@@ -2,7 +2,7 @@ extends Panel
 
 signal set_done(really)
 
-var pressed : bool setget set_pressed
+var pressed : bool: set = set_pressed
 
 
 func set_pressed(new : bool) -> void:
@@ -20,8 +20,8 @@ func set_pressed(new : bool) -> void:
 
 func animate_checkbox(start : float, end : float) -> void:
 	$Tween.remove_all()
-	$Tween.interpolate_property($CheckBox2, "rect_rotation", $CheckBox2.rect_rotation, 360 * end, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($CheckBox2, "rect_scale", $CheckBox2.rect_scale, Vector2.ONE * end, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT, 0.0)
+	$Tween.interpolate_property($CheckBox2, "rotation", $CheckBox2.rotation, 360 * end, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT, 0.0)
+	$Tween.interpolate_property($CheckBox2, "scale", $CheckBox2.scale, Vector2.ONE * end, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT, 0.0)
 	$Tween.start()
 	$CheckBox2.visible = true
 #	$CheckBox2.visible = bool(floor(end))
@@ -30,4 +30,4 @@ func animate_checkbox(start : float, end : float) -> void:
 
 func _on_CheckBox_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		self.pressed = !self.pressed
+		self.button_pressed = !self.pressed

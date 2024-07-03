@@ -1,17 +1,17 @@
 extends Resource
 class_name ThemeResource
 
-export(Color) var primary_col : Color
-export(Color) var highlight_colour : Color
-export(float) var contrast : float 
+@export var primary_col: Color
+@export var highlight_colour: Color
+@export var contrast: float 
 
 # Button specific
 
-export var btn_active_col : Color
-export var btn_inactive_col : Color
+@export var btn_active_col : Color
+@export var btn_inactive_col : Color
 
 # Fonts
-export(Color) var text_color
+@export var text_color: Color
 
 
 # private vars calculated based on the contrast value
@@ -33,12 +33,12 @@ func update_theme_values() -> void:
 	
 	# maths!
 	normal = primary_col
-	darker = primary_col.linear_interpolate(Color.black, contrast)
-	super_dark = primary_col.linear_interpolate(Color.black, contrast * 2.0)
-	lighter = primary_col.linear_interpolate(Color.white, contrast * 0.5)
+	darker = primary_col.lerp(Color.BLACK, contrast)
+	super_dark = primary_col.lerp(Color.BLACK, contrast * 2.0)
+	lighter = primary_col.lerp(Color.WHITE, contrast * 0.5)
 	
-	highlight_lighter = highlight_colour.linear_interpolate(Color.white, contrast)
-	highlight_darker = highlight_colour.linear_interpolate(Color.black, contrast)
+	highlight_lighter = highlight_colour.lerp(Color.WHITE, contrast)
+	highlight_darker = highlight_colour.lerp(Color.BLACK, contrast)
 
 
 func get_color(which : int) -> Color:
@@ -72,4 +72,4 @@ func set_color(which : int, new : Color) -> void:
 
 
 func save_theme() -> void:
-	ResourceSaver.save(Defaults.settings_res.THEME_SAVE_PATH, self)
+	ResourceSaver.save(self, Defaults.settings_res.THEME_SAVE_PATH)

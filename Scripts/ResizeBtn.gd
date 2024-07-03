@@ -13,12 +13,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		ms_speed = event.relative
-		OS.window_size.x = clamp(OS.window_size.x + event.relative.x, MIN_WIN_SIZE.x, OS.get_screen_size().x - OS.window_position.x)
-		OS.window_size.y = clamp(OS.window_size.y + event.relative.y, MIN_WIN_SIZE.y, OS.get_screen_size().y - OS.window_position.y)
+		get_window().size.x = clamp(get_window().size.x + event.relative.x, MIN_WIN_SIZE.x, DisplayServer.screen_get_size().x - get_window().position.x)
+		get_window().size.y = clamp(get_window().size.y + event.relative.y, MIN_WIN_SIZE.y, DisplayServer.screen_get_size().y - get_window().position.y)
 	if event is InputEventMouseButton and !event.pressed:
 		set_process_input(false)
 		Input.set_mouse_mode(0)
-		Input.warp_mouse_position(OS.window_size - Vector2(10,14))
+		Input.warp_mouse(get_window().size - Vector2(10,14))
 	
 	
 func _on_ResizeBtn_pressed() -> void:

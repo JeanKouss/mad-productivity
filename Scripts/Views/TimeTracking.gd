@@ -2,7 +2,7 @@ extends Control
 
 signal toggle_time_track(_name, really)
 
-export var title : String
+@export var title : String
 var res : TimeTrackResource
 
 var total_secs : int
@@ -11,7 +11,7 @@ var active : bool = false
 
 func _ready() -> void:
 	$LinearTimeTrackingContainer/ScrollContainer/VBoxContainer/TrackedItem.hide()
-	Defaults.connect("theme_changed", self, "on_theme_changed")
+	Defaults.connect("theme_changed", Callable(self, "on_theme_changed"))
 	if res == null:
 		load_res()
 	load_time_tracks()
@@ -39,7 +39,7 @@ func load_time_tracks() -> void:
 	for i in res.tracks:
 		var item = res.tracks[i]
 		if item.is_finished():
-			create_track_visual(item.name, item.get_start_unix_time(), item.get_len(), i)
+			create_track_visual(item.name, item.get_start_unix_time(), item.get_length(), i)
 		else:
 			print("deleting item:")
 			print(item.name)
@@ -52,8 +52,8 @@ func create_track_visual(_name : String, _date : int, _time : int, _id : int) ->
 	new.id = _id
 	
 	var time = get_hours_minutes_seconds(_time)
-	new.connect("delete_pressed", self, "_on_delete_pressed")
-	new.connect("new_tracked_item_text", self, "_on_new_time_track_item_text")
+	new.connect("delete_pressed", Callable(self, "_on_delete_pressed"))
+	new.connect("new_tracked_item_text", Callable(self, "_on_new_time_track_item_text"))
 	
 	new.fill_details(Defaults.get_datetime_from_unix_time(_date), (time[2] + ":" + time[1] + ":" + time[0]), _name)
 
@@ -101,7 +101,7 @@ func update_time_track_item_text(_text : String, _id : int) -> void:
 
 func update_theme() -> void:
 	$Gradient.modulate = Defaults.ui_theme.darker
-	$NoDataText.add_color_override("font_color", Defaults.ui_theme.highlight_colour)
+	$NoDataText.add_theme_color_override("font_color", Defaults.ui_theme.highlight_colour)
 	
 	
 func update_view_text() -> void:

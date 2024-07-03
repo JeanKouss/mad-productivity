@@ -1,15 +1,15 @@
 class_name TimeTrackResource
 extends Resource
 
-export(String) var project
-export(int) var time_tracked
-export(String) var save_name
-export(Dictionary) var date_modified
-export(Dictionary) var date_created
-export(Dictionary) var tracks
-export(bool) var pomodoro_on
-export(int) var tracks_count
-export(Dictionary) var track_back_up
+@export var project: String
+@export var time_tracked: int
+@export var save_name: String
+@export var date_modified: Dictionary
+@export var date_created: Dictionary
+@export var tracks: Dictionary
+@export var pomodoro_on: bool
+@export var tracks_count: int
+@export var track_back_up: Dictionary
 
 func add_track(name : String) -> int:
 	var item = TimeTrackItem.new()

@@ -1,7 +1,7 @@
 extends Control
 
 
-export var title : String
+@export var title : String
 
 var res : SettingsResource
 
@@ -25,11 +25,11 @@ func _ready() -> void:
 	$VBoxContainer/UserName.text = res.name
 	$VBoxContainer/UserTitle.text = res.title
 	update_theme()
-	Defaults.connect("theme_changed", self, "on_theme_changed")
+	Defaults.connect("theme_changed", Callable(self, "on_theme_changed"))
 
 
 func update_theme() -> void:
-	$VBoxContainer/UserName.add_color_override("font_color", Defaults.ui_theme.highlight_colour)
+	$VBoxContainer/UserName.add_theme_color_override("font_color", Defaults.ui_theme.highlight_colour)
 
 
 func update_view_text() -> void:

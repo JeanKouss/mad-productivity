@@ -2,7 +2,7 @@ extends Panel
 
 signal register_time_track_item(track_item)
 
-export(Color) var pomodoro_color
+@export var pomodoro_color: Color
 
 enum STATES { NORMAL, POMODORO, POMODORO_BREAK }
 enum TRACKING_STATE { IDLE, ACTIVE, PAUSED}
@@ -28,8 +28,8 @@ var curr_track_item : TimeTrackItem
 var notified : bool = false
 
 func _ready() -> void:
-	Defaults.connect("track_item", self, "on_Defaults_track_item")
-	Defaults.connect("toggle_time_tracking_panel", self, "on_toggle_time_tracking_panel")
+	Defaults.connect("track_item", Callable(self, "on_Defaults_track_item"))
+	Defaults.connect("toggle_time_tracking_panel", Callable(self, "on_toggle_time_tracking_panel"))
 	Defaults.time_tracking_panel = self
 	toggle_view(STATES.NORMAL)
 	hookup_signals()
@@ -39,18 +39,18 @@ func _ready() -> void:
 	
 func hookup_signals() -> void:
 	# Pomodoro
-	$Content/VBoxContainer/PomodoroButtons/PomodoroStart.connect("pressed",self, "on_pom_pressed", [BUTTONS.START])
-	$Content/VBoxContainer/PomodoroButtons/PomodoroContinue.connect("pressed",self, "on_pom_pressed", [BUTTONS.CONTINUE])
-	$Content/VBoxContainer/PomodoroButtons/PomodoroFinish.connect("pressed",self, "on_pom_pressed", [BUTTONS.FINISH])
-	$Content/VBoxContainer/PomodoroButtons/PomodoroBreak.connect("pressed",self, "on_pom_pressed", [BUTTONS.BREAK])
-	$Content/VBoxContainer/PomodoroButtons/PomodoroCancel.connect("pressed",self, "on_pom_pressed", [BUTTONS.CANCEL])
-	$Content/VBoxContainer/PomodoroButtons/PomodoroReset.connect("pressed",self, "on_pom_pressed", [BUTTONS.RESET])
+	$Content/VBoxContainer/PomodoroButtons/PomodoroStart.connect("pressed", Callable(self, "on_pom_pressed").bind(BUTTONS.START))
+	$Content/VBoxContainer/PomodoroButtons/PomodoroContinue.connect("pressed", Callable(self, "on_pom_pressed").bind(BUTTONS.CONTINUE))
+	$Content/VBoxContainer/PomodoroButtons/PomodoroFinish.connect("pressed", Callable(self, "on_pom_pressed").bind(BUTTONS.FINISH))
+	$Content/VBoxContainer/PomodoroButtons/PomodoroBreak.connect("pressed", Callable(self, "on_pom_pressed").bind(BUTTONS.BREAK))
+	$Content/VBoxContainer/PomodoroButtons/PomodoroCancel.connect("pressed", Callable(self, "on_pom_pressed").bind(BUTTONS.CANCEL))
+	$Content/VBoxContainer/PomodoroButtons/PomodoroReset.connect("pressed", Callable(self, "on_pom_pressed").bind(BUTTONS.RESET))
 	# Normal
-	$Content/VBoxContainer/NormalButtons/NormalStart.connect("pressed",self, "on_normal_pressed", [BUTTONS.START])
-	$Content/VBoxContainer/NormalButtons/NormalPause.connect("pressed",self, "on_normal_pressed", [BUTTONS.PAUSE])
-	$Content/VBoxContainer/NormalButtons/NormalContinue.connect("pressed",self, "on_normal_pressed", [BUTTONS.CONTINUE])
-	$Content/VBoxContainer/NormalButtons/NormalFinish.connect("pressed",self, "on_normal_pressed", [BUTTONS.FINISH])
-	$Content/VBoxContainer/NormalButtons/NormalCancel.connect("pressed",self, "on_normal_pressed", [BUTTONS.CANCEL])
+	$Content/VBoxContainer/NormalButtons/NormalStart.connect("pressed", Callable(self, "on_normal_pressed").bind(BUTTONS.START))
+	$Content/VBoxContainer/NormalButtons/NormalPause.connect("pressed", Callable(self, "on_normal_pressed").bind(BUTTONS.PAUSE))
+	$Content/VBoxContainer/NormalButtons/NormalContinue.connect("pressed", Callable(self, "on_normal_pressed").bind(BUTTONS.CONTINUE))
+	$Content/VBoxContainer/NormalButtons/NormalFinish.connect("pressed", Callable(self, "on_normal_pressed").bind(BUTTONS.FINISH))
+	$Content/VBoxContainer/NormalButtons/NormalCancel.connect("pressed", Callable(self, "on_normal_pressed").bind(BUTTONS.CANCEL))
 	# others perhaps?
 
 
@@ -61,10 +61,10 @@ func check_unfinished_track() -> void:
 		curr_track_item = Defaults.settings_res.unsaved_time_track
 		print(curr_track_item.type)
 		if curr_track_item.type == STATES.NORMAL:
-			$Content/StateButtons/Normal.pressed = true
+			$Content/StateButtons/Normal.button_pressed = true
 			_on_Normal_pressed()
 		else:
-			$Content/StateButtons/Pomodoro.pressed = true
+			$Content/StateButtons/Pomodoro.button_pressed = true
 			_on_Pomodoro_pressed()
 			
 		$Content/StateButtons/Pomodoro.disabled = true
@@ -87,7 +87,7 @@ func toggle_self(really : bool) -> void:
 	var fin_size : int
 	fin_size = OPEN_SIZE if really else 0
 	var fin_opacity : float = 1.0 if really else 0.0
-	$Tween.interpolate_property(self, "rect_min_size:x", rect_min_size.x, fin_size, 0.6, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
+	$Tween.interpolate_property(self, "custom_minimum_size:x", custom_minimum_size.x, fin_size, 0.6, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.interpolate_property($Content, "modulate:a", $Content.modulate.a, fin_opacity, 0.6, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.start()
 
@@ -123,7 +123,7 @@ func start_time_tracking() -> void:
 	
 	curr_track_item = TimeTrackItem.new()
 	curr_track_item.create_track($Content/VBoxContainer/ItemInput.text)
-	curr_track_item.start_tracking(OS.get_unix_time())
+	curr_track_item.start_tracking(Time.get_unix_time_from_system())
 	curr_track_item.type = state
 	
 	$ProgressTween.remove_all()
@@ -172,7 +172,7 @@ func start_pomodoro_break() -> void:
 func stop_time_tracking(cancel : bool ) -> void:
 	if !cancel and state != STATES.POMODORO_BREAK:
 		# wrap up the time track officialy and send it off
-		curr_track_item.end_tracking(OS.get_unix_time())
+		curr_track_item.end_tracking(Time.get_unix_time_from_system())
 		curr_track_item.type = state
 		emit_signal("register_time_track_item", curr_track_item)
 #		print(tracked_seconds)
@@ -317,9 +317,9 @@ func play_notification(break_time : bool = false) -> void:
 			show_pomodoro_continue_buttons()
 		$NotificationSound.play()
 		notified = true
-		if !OS.is_window_focused():
-			OS.set_window_always_on_top(true)
-			OS.set_window_always_on_top(false)
+		if !get_window().has_focus():
+			get_window().always_on_top = (true)
+			get_window().always_on_top = (false)
 
 
 func show_pomodoro_pause_buttons() -> void:

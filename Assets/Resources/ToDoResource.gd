@@ -1,14 +1,14 @@
 class_name ToDoResource
 extends Resource
 
-export(Dictionary) var tasks
-export(String) var save_name
-export(String) var date_modified
-export(String) var date_created
-export(Dictionary) var projects
-export(int) var top_id = 0
-export(int) var project_top_id = 0
-export(int) var version : = 0
+@export var tasks: Dictionary
+@export var save_name: String
+@export var date_modified: String
+@export var date_created: String
+@export var projects: Dictionary
+@export var top_id: int = 0
+@export var project_top_id: int = 0
+@export var version := 0
 
 
 func get_project_ids() -> Array:
@@ -71,10 +71,10 @@ func add_new_task(_text : String, _done : bool, _date : Dictionary, _done_date :
 	var word_dic = {
 		"text" : _text,
 		"done" : false,
-		"date" : OS.get_datetime(),
+		"date" : Time.get_datetime_dict_from_system(),
 		"project" : _project,
 		"done_date" : {},
-		"date_created" : OS.get_unix_time(),
+		"date_created" : Time.get_unix_time_from_system(),
 		"id" : top_id
 	}
 	tasks[top_id] = word_dic

@@ -1,6 +1,6 @@
 extends Control
 
-export var title : String
+@export var title : String
 
 var active : bool = false
 

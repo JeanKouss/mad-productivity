@@ -2,14 +2,14 @@ extends TextureButton
 
 signal toggled_menu_btn
 
-export(String) var target : String
-export(bool) var bottom : bool = false
+@export var target: String
+@export var bottom: bool = false
 
 
 func _ready() -> void:
-	connect("mouse_entered", self, "mouse_entered")
-	connect("mouse_exited", self, "mouse_exited")
-	connect("toggled", self, "btn_toggled")
+	connect("mouse_entered", Callable(self, "mouse_entered"))
+	connect("mouse_exited", Callable(self, "mouse_exited"))
+	connect("toggled", Callable(self, "btn_toggled"))
 	
 	
 func mouse_entered() -> void:

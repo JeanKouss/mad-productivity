@@ -22,7 +22,7 @@ func _ready() -> void:
 	for i in $Buttons.get_children():
 		if i is TextureButton and i.get("target"):
 			buttons.append(i)
-			i.connect("toggled_menu_btn", self, "on_toggled_menu_btn", [i, idx, i.target])
+			i.connect("toggled_menu_btn", Callable(self, "on_toggled_menu_btn").bind(i, idx, i.target))
 			idx += 1
 	number_of_views = idx
 
@@ -34,23 +34,23 @@ func update_particles() -> void:
 	
 	
 func connect_signals() -> void:
-	get_viewport().connect("size_changed", self, "on_window_size_changed")
-	Defaults.connect("theme_changed", self, "on_theme_changed")
-	Defaults.connect("track_item", self, "on_track_item")
-	Defaults.connect("settings_changed", self, "on_settings_changed")
+	get_viewport().connect("size_changed", Callable(self, "on_window_size_changed"))
+	Defaults.connect("theme_changed", Callable(self, "on_theme_changed"))
+	Defaults.connect("track_item", Callable(self, "on_track_item"))
+	Defaults.connect("changed", Callable(self, "on_settings_changed"))
 	
 
 
 func time_track_panel_ready() -> void:
 	if Defaults.settings_res.unsaved_time_track:
-		yield(get_tree(), "idle_frame")
-		$Buttons/TimeTrackPanel.pressed = true
+		await get_tree().idle_frame
+		$Buttons/TimeTrackPanel.button_pressed = true
 
 
 
 func manual_view_toggle(which : int = 0) -> void:
 	which = wrapi(which, 0, number_of_views)
-	buttons[which].pressed = true
+	buttons[which].button_pressed = true
 
 
 # which passes the specific node
@@ -60,18 +60,18 @@ func on_toggled_menu_btn(which : TextureButton, idx : int, target : String = "")
 		active_btn.deactivate()
 	
 	active_btn = which
-	move_selection_box(which.rect_position.y)
+	move_selection_box(which.position.y)
 	emit_signal("view_changed", idx, target)
 
 
 func on_window_size_changed() -> void:
-	yield(get_tree(), "idle_frame")
+	await get_tree().idle_frame
 	if active_btn:
-		move_selection_box(active_btn.rect_global_position.y)
+		move_selection_box(active_btn.global_position.y)
 
 
-func move_selection_box(where : float = 0.0, add_parent_y : bool = false) -> void:
-	$Tween.interpolate_property($SelectionBox, "rect_position:y", $SelectionBox.rect_position.y, where, 0.5, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
+func move_selection_box(where : float = 0.0, _add_parent_y : bool = false) -> void:
+	$Tween.interpolate_property($SelectionBox, "position:y", $SelectionBox.position.y, where, 0.5, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.interpolate_property($SelectionBox/Particles, "speed_scale", 1.75, 0.2, 0.5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 0.0)
 	$Tween.start()
 
@@ -91,7 +91,7 @@ func _on_TimeTrackPanel_toggled(button_pressed: bool) -> void:
 
 
 func _on_Shortcuts_shortcut_timetrack_panel() -> void:
-	$Buttons/TimeTrackPanel.pressed = !$Buttons/TimeTrackPanel.pressed
+	$Buttons/TimeTrackPanel.button_pressed = !$Buttons/TimeTrackPanel.pressed
 
 
 func on_theme_changed() -> void:
@@ -100,7 +100,7 @@ func on_theme_changed() -> void:
 
 func on_track_item(_name : String) -> void:
 	if !$Buttons/TimeTrackPanel.pressed:
-		$Buttons/TimeTrackPanel.pressed = true
+		$Buttons/TimeTrackPanel.button_pressed = true
 
 
 func on_settings_changed() -> void:

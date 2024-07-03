@@ -14,7 +14,7 @@ var minimized_pos : Vector2
 var offset : Vector2 
 
 func _ready() -> void:
-	if OS.get_borderless_window() == false:
+	if get_window().borderless == false:
 		$Right/Maximize.hide()
 		$Right/Minimuze.hide()
 		$Right/Exit.hide()
@@ -25,14 +25,14 @@ func _ready() -> void:
 		
 		
 func connect_signals() -> void:
-	connect("mouse_entered", self, "_on_mouse_entered")
-	connect("mouse_exited", self, "_on_mouse_exited")
-	Defaults.connect("view_changed", self, "on_view_changed")
-	Defaults.connect("update_view_info", self, "on_update_view_info")
+	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	connect("mouse_exited", Callable(self, "_on_mouse_exited"))
+	Defaults.connect("view_changed", Callable(self, "on_view_changed"))
+	Defaults.connect("update_view_info", Callable(self, "on_update_view_info"))
 		
 		
 func _on_mouse_entered() -> void:
-	if OS.get_borderless_window() == true:
+	if get_window().borderless == true:
 		set_process_input(true)
 
 func _on_mouse_exited() -> void:
@@ -46,14 +46,14 @@ func _input(event: InputEvent) -> void:
 		else:
 			offset = Vector2()
 	if event is InputEventMouseMotion and offset != Vector2():
-		if OS.window_maximized:
-			offset *=  Defaults.settings_res.minimized_window_size.x / OS.get_window_size().x
-			$Right/Maximize.pressed = false
-		OS.set_window_position(OS.get_window_position() + event.get_global_position() - offset)
+		if (get_window().mode == Window.MODE_MAXIMIZED):
+			offset *=  Defaults.settings_res.minimized_window_size.x / get_window().get_size().x
+			$Right/Maximize.button_pressed = false
+		get_window().set_position(get_window().get_position() + event.get_global_position() - offset)
 
 
 func _on_Minimuze_pressed() -> void:
-	OS.window_minimized = true
+	get_window().mode = Window.MODE_MINIMIZED if (true) else Window.MODE_WINDOWED
 
 
 func _on_Exit_pressed() -> void:
@@ -62,16 +62,16 @@ func _on_Exit_pressed() -> void:
 
 func _on_Maximize_toggled(button_pressed: bool) -> void:
 	if button_pressed:
-		Defaults.settings_res.minimized_window_size = OS.window_size
-		Defaults.settings_res.minimized_window_position = OS.window_position
+		Defaults.settings_res.minimized_window_size = get_window().size
+		Defaults.settings_res.minimized_window_position = get_window().position
 		Defaults.settings_res.window_maximized = true
 		Defaults.save_settings_resource()
-		OS.window_maximized = button_pressed
+		get_window().mode = Window.MODE_MAXIMIZED if (button_pressed) else Window.MODE_WINDOWED
 	else:
-		OS.window_maximized = false
+		get_window().mode = Window.MODE_MAXIMIZED if (false) else Window.MODE_WINDOWED
 		Defaults.settings_res.window_maximized = false
-		OS.window_size = Defaults.settings_res.minimized_window_size
-		OS.window_position = Defaults.settings_res.minimized_window_position
+		get_window().size = Defaults.settings_res.minimized_window_size
+		get_window().position = Defaults.settings_res.minimized_window_position
 		Defaults.save_settings_resource()
 				
 

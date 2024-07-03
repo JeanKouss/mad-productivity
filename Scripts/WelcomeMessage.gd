@@ -1,6 +1,6 @@
 extends Label
 
-export(Resource) var resource
+@export var resource: Resource
 
 var texts : Array
 var quote_index : int

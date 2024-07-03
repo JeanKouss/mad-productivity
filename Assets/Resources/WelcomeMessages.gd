@@ -1,4 +1,4 @@
 class_name WelcomeNoteResource
 extends Resource
 
-export(PoolStringArray) var messages : PoolStringArray
+@export var messages: PackedStringArray

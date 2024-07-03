@@ -1,8 +1,8 @@
 class_name NoteResource
 extends Resource
 
-export(String) var title
-export(String) var text
-export(String) var save_name
-export(Dictionary) var date_created
-export(Dictionary) var date_modified
+@export var title: String
+@export var text: String
+@export var save_name: String
+@export var date_created: Dictionary
+@export var date_modified: Dictionary

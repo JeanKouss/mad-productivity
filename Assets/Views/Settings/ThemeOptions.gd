@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-signal update_values
+signal values_updated
 
 var color_int : int = 0
 var color_node : ColorRect
@@ -9,8 +9,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 	
 	
-func update_values() -> void:
-	emit_signal("update_values")
+func _update_values() -> void:
+	emit_signal("values_updated")
 	
 	
 

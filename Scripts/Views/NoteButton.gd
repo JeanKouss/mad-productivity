@@ -6,7 +6,7 @@ signal start_time_track(_name)
 var res : NoteResource
 var deleting = false
 
-export(Color) var delete_btn_colour
+@export var delete_btn_colour: Color
 var target_opacity : float
 
 func _ready() -> void:
@@ -15,22 +15,22 @@ func _ready() -> void:
 	target_opacity = $DeleteBtn.modulate.a
 	$DeleteBtn.hide()
 	$TimeTrack.hide()
-	$DeleteBtn.connect("button_up", self, "_on_delete_btn_pressed")
-	$TimeTrack.connect("button_up", self, "_on_time_track_btn_pressed")
-	connect("mouse_entered", self, "mouse_entered")
-	connect("mouse_exited", self, "mouse_exited")
+	$DeleteBtn.connect("button_up", Callable(self, "_on_delete_btn_pressed"))
+	$TimeTrack.connect("button_up", Callable(self, "_on_time_track_btn_pressed"))
+	connect("mouse_entered", Callable(self, "mouse_entered"))
+	connect("mouse_exited", Callable(self, "mouse_exited"))
 	
 	
 func hide_delete(duration : float = 0.5) -> void:
 	# IMPORTANT : tween.remove_all() is the way to reset and stop all animation so that they cant overlap
 	$Tween.remove_all()
-	$Tween.interpolate_property($DeleteBtn, 'rect_scale', Vector2.ONE ,Vector2.ONE * 0.01, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
+	$Tween.interpolate_property($DeleteBtn, 'scale', Vector2.ONE ,Vector2.ONE * 0.01, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.interpolate_property($DeleteBtn, 'modulate:a', modulate.a ,0.0, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.start()
 	
 func show_delete(duration : float = 0.5) -> void:
 	$Tween.remove_all()
-	$Tween.interpolate_property($DeleteBtn, 'rect_scale', Vector2.ONE * 0.01 ,Vector2.ONE, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
+	$Tween.interpolate_property($DeleteBtn, 'scale', Vector2.ONE * 0.01 ,Vector2.ONE, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.interpolate_property($DeleteBtn, 'modulate:a', modulate.a ,target_opacity, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
 	$Tween.start()
 	
@@ -55,9 +55,9 @@ func _on_time_track_btn_pressed() -> void:
 	Defaults.emit_signal("track_item", res.title)
 		
 		
-func delete_note(btn : Button, _res : NoteResource) -> void:
+func delete_note(_btn : Button, _res : NoteResource) -> void:
 	deleting = true
-	var dir : Directory = Directory.new()
-	var err = dir.remove(Defaults.NOTES_SAVE_PATH + _res.save_name + ".tres")
+	var dir : DirAccess = DirAccess.open("user://")
+	var _err = dir.remove(Defaults.NOTES_SAVE_PATH + _res.save_name + ".tres")
 	queue_free()
 	

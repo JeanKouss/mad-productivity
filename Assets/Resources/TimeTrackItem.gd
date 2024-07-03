@@ -2,9 +2,9 @@ extends Resource
 
 class_name TimeTrackItem
 
-export(Array) var date_ranges
-export(String) var name
-export(int) var type
+@export var date_ranges: Array
+@export var name: String
+@export var type: int
 
 func create_track(n : String) -> void:
 	name = n
@@ -26,10 +26,10 @@ func get_duration() -> int:
 		if len(daterange) > 1:
 			length += (daterange[1] - daterange[0])
 		else:
-			length += (OS.get_unix_time() - daterange[0])
+			length += (Time.get_unix_time_from_system() - daterange[0])
 	return length
 
-func get_len(only_last : bool = false) -> int:
+func get_length(only_last : bool = false) -> int:
 	var length : int = 0
 	if only_last:
 		length = date_ranges[-1][1] - date_ranges[-1][0]

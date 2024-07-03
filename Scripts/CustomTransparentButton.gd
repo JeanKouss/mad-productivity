@@ -2,9 +2,9 @@ extends TextureButton
 
 
 func _ready() -> void:
-	connect("mouse_entered", self, "mouse_entered")
-	connect("mouse_exited", self, "mouse_exited")
-	connect("toggled", self, "on_toggled")
+	connect("mouse_entered", Callable(self, "mouse_entered"))
+	connect("mouse_exited", Callable(self, "mouse_exited"))
+	connect("toggled", Callable(self, "on_toggled"))
 	update_colours()
 	
 	

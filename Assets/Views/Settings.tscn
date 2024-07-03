@@ -1,925 +1,684 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=19 format=3 uid="uid://ejbj1frauxwc"]
 
-[ext_resource path="res://Assets/Fonts/Righteous50.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Assets/Fonts/Roboto12.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Assets/Fonts/Roboto20.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Themes/Roboto12Clean.tres" type="Theme" id=4]
-[ext_resource path="res://Assets/Themes/CuteButtonTheme.tres" type="Theme" id=5]
-[ext_resource path="res://Assets/Themes/CheckBox.tres" type="Theme" id=6]
-[ext_resource path="res://Scripts/Views/Settings.gd" type="Script" id=7]
-[ext_resource path="res://Assets/Buttons/X_normal.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Themes/Dark/PanelBorderOnlyHighlight.tres" type="StyleBox" id=9]
-[ext_resource path="res://Assets/Views/Settings/ThemeColorOption.gd" type="Script" id=10]
-[ext_resource path="res://Assets/Themes/Dark/PanelSuperDarkGreen.tres" type="StyleBox" id=11]
-[ext_resource path="res://Assets/Views/Settings/Contrast.gd" type="Script" id=12]
-[ext_resource path="res://Assets/Views/Settings/ThemeOptions.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Views/Settings/ThemeColorPicker.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Themes/PopupTheme.tres" type="Theme" id=16]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Righteous50.tres" id="1"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Roboto12.tres" id="2"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Roboto20.tres" id="3"]
+[ext_resource type="Theme" uid="uid://c5lr422jpugj7" path="res://Assets/Themes/Roboto12Clean.tres" id="4"]
+[ext_resource type="Theme" uid="uid://18v18hamqe1f" path="res://Assets/Themes/CuteButtonTheme.tres" id="5"]
+[ext_resource type="Theme" uid="uid://bcvwye7fse8ex" path="res://Assets/Themes/CheckBox.tres" id="6"]
+[ext_resource type="Script" path="res://Scripts/Views/Settings.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://blx2vowioew71" path="res://Assets/Buttons/X_normal.png" id="8"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelBorderOnlyHighlight.tres" id="9"]
+[ext_resource type="Script" path="res://Assets/Views/Settings/ThemeColorOption.gd" id="10"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelSuperDarkGreen.tres" id="11"]
+[ext_resource type="Script" path="res://Assets/Views/Settings/Contrast.gd" id="12"]
+[ext_resource type="Script" path="res://Assets/Views/Settings/ThemeOptions.gd" id="13"]
+[ext_resource type="Script" path="res://Assets/Views/Settings/ThemeColorPicker.gd" id="14"]
+[ext_resource type="Theme" uid="uid://ccnbc4135hpg8" path="res://Assets/Themes/PopupTheme.tres" id="16"]
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id="19"]
 
-[sub_resource type="StyleBoxEmpty" id=22]
+[sub_resource type="StyleBoxEmpty" id="22"]
 
-[sub_resource type="StyleBoxEmpty" id=23]
+[sub_resource type="StyleBoxEmpty" id="23"]
 
 [node name="Settings" type="Control"]
-margin_right = 1050.0
-margin_bottom = 1355.0
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1050.0
+offset_bottom = 1355.0
+script = ExtResource("7")
 title = "Settings"
 
 [node name="HBX" type="HBoxContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 40.0
-margin_top = 40.0
-margin_right = -39.0
-margin_bottom = -39.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_left = 40.0
+offset_top = 40.0
+offset_right = -39.0
+offset_bottom = -39.0
 
 [node name="C" type="ScrollContainer" parent="HBX"]
-margin_right = 567.0
-margin_bottom = 1276.0
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 4 )
-scroll_horizontal_enabled = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme = ExtResource("4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBX/C"]
-margin_right = 557.0
-margin_bottom = 1276.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 size_flags_horizontal = 11
 size_flags_vertical = 3
-custom_constants/separation = 15
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_constants/separation = 15
 
 [node name="Title" type="Label" parent="HBX/C/VBoxContainer"]
 visible = false
-margin_right = 434.0
-margin_bottom = 63.0
-custom_colors/font_color = Color( 0.854902, 0.423529, 0.384314, 1 )
-custom_fonts/font = ExtResource( 1 )
-custom_styles/normal = SubResource( 19 )
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.423529, 0.384314, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_styles/normal = SubResource("19")
 text = "SETTINGS"
-align = 1
 
 [node name="CatTheme" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_right = 557.0
-margin_bottom = 50.0
-custom_constants/separation = 20
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
+theme_override_constants/separation = 20
+script = ExtResource("13")
 
 [node name="Theme" type="Label" parent="HBX/C/VBoxContainer/CatTheme"]
-margin_right = 63.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
-custom_fonts/font = ExtResource( 3 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/normal = SubResource("22")
 text = "Theme"
-align = 1
-valign = 1
 
 [node name="TheneResetButton" type="Button" parent="HBX/C/VBoxContainer/CatTheme"]
-margin_left = 83.0
-margin_top = 10.0
-margin_right = 143.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 30 )
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "reset"
 
 [node name="Primary" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 65.0
-margin_right = 557.0
-margin_bottom = 82.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Primary"]
-margin_right = 350.0
-margin_bottom = 17.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Primary color"
 
 [node name="Option" type="ColorRect" parent="HBX/C/VBoxContainer/Primary"]
-margin_left = 354.0
-margin_right = 371.0
-margin_bottom = 17.0
-rect_min_size = Vector2( 17, 0 )
-theme = ExtResource( 6 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme = ExtResource("6")
+script = ExtResource("10")
 
 [node name="BG" type="ReferenceRect" parent="HBX/C/VBoxContainer/Primary/Option"]
 show_behind_parent = true
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -14.5
-margin_top = -14.5
-margin_right = 14.5
-margin_bottom = 14.5
+offset_left = -14.5
+offset_top = -14.5
+offset_right = 14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 17, 0 )
 mouse_filter = 2
-border_color = Color( 0, 0, 0, 0.545098 )
+border_color = Color(0, 0, 0, 0.545098)
 editor_only = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Highlight" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 97.0
-margin_right = 557.0
-margin_bottom = 114.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Highlight"]
-margin_right = 350.0
-margin_bottom = 17.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Highlight color"
 
 [node name="Option" type="ColorRect" parent="HBX/C/VBoxContainer/Highlight"]
-margin_left = 354.0
-margin_right = 371.0
-margin_bottom = 17.0
-rect_min_size = Vector2( 17, 0 )
-theme = ExtResource( 6 )
-script = ExtResource( 10 )
-set_name = 1
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme = ExtResource("6")
+script = ExtResource("10")
 
 [node name="BG" type="ReferenceRect" parent="HBX/C/VBoxContainer/Highlight/Option"]
 show_behind_parent = true
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -14.5
-margin_top = -14.5
-margin_right = 14.5
-margin_bottom = 14.5
+offset_left = -14.5
+offset_top = -14.5
+offset_right = 14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 17, 0 )
 mouse_filter = 2
-border_color = Color( 0, 0, 0, 0.545098 )
+border_color = Color(0, 0, 0, 0.545098)
 editor_only = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Contrast" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 129.0
-margin_right = 557.0
-margin_bottom = 156.0
-script = ExtResource( 12 )
+layout_mode = 2
+script = ExtResource("12")
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Contrast"]
-margin_top = 5.0
-margin_right = 350.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Contrast"
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/Contrast"]
-margin_left = 354.0
-margin_right = 417.425
-margin_bottom = 27.0
-rect_min_size = Vector2( 63.425, 0 )
-theme = ExtResource( 6 )
+custom_minimum_size = Vector2(63.425, 0)
+layout_mode = 2
+theme = ExtResource("6")
 min_value = -5.0
 max_value = 5.0
 step = 0.01
 
 [node name="TextColour" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 171.0
-margin_right = 557.0
-margin_bottom = 188.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/TextColour"]
-margin_right = 350.0
-margin_bottom = 17.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Text Color"
 
 [node name="Option" type="ColorRect" parent="HBX/C/VBoxContainer/TextColour"]
-margin_left = 354.0
-margin_right = 371.0
-margin_bottom = 17.0
-rect_min_size = Vector2( 17, 0 )
-theme = ExtResource( 6 )
-script = ExtResource( 10 )
-set_name = 2
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 2
+theme = ExtResource("6")
+script = ExtResource("10")
 
 [node name="BG" type="ReferenceRect" parent="HBX/C/VBoxContainer/TextColour/Option"]
 show_behind_parent = true
+custom_minimum_size = Vector2(17, 0)
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -14.5
-margin_top = -14.5
-margin_right = 14.5
-margin_bottom = 14.5
+offset_left = -14.5
+offset_top = -14.5
+offset_right = 14.5
+offset_bottom = 14.5
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 17, 0 )
 mouse_filter = 2
-border_color = Color( 0, 0, 0, 0.545098 )
+border_color = Color(0, 0, 0, 0.545098)
 editor_only = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Category3" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 203.0
-margin_right = 557.0
-margin_bottom = 253.0
-custom_constants/separation = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="General" type="Label" parent="HBX/C/VBoxContainer/Category3"]
-margin_right = 70.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
-custom_fonts/font = ExtResource( 3 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/normal = SubResource("22")
 text = "General"
-align = 1
-valign = 1
 
 [node name="GeneralResetButton" type="Button" parent="HBX/C/VBoxContainer/Category3"]
-margin_left = 90.0
-margin_top = 10.0
-margin_right = 150.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 30 )
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "reset"
 
 [node name="SecsDashboard" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 268.0
-margin_right = 557.0
-margin_bottom = 293.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/SecsDashboard"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Show seconds in dashboard"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/SecsDashboard"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="TimeFormatDashboard" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 308.0
-margin_right = 557.0
-margin_bottom = 333.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/TimeFormatDashboard"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "24 hour time format"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/TimeFormatDashboard"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="FontSize" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 348.0
-margin_right = 557.0
-margin_bottom = 375.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/FontSize"]
-margin_top = 5.0
-margin_right = 350.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Font size (notes)"
 
 [node name="Option" type="OptionButton" parent="HBX/C/VBoxContainer/FontSize"]
-margin_left = 354.0
-margin_right = 434.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 80, 0 )
-theme = ExtResource( 6 )
-text = "Small"
-items = [ "Small", null, false, 0, null, "Medium", null, false, 1, null, "Large", null, false, 2, null ]
-selected = 0
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="ParticleEffect" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 390.0
-margin_right = 557.0
-margin_bottom = 415.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/ParticleEffect"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Particle effect"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/ParticleEffect"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="WindowPos" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 430.0
-margin_right = 557.0
-margin_bottom = 455.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/WindowPos"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Remember window size and position"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/WindowPos"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="WindowPos2" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 470.0
-margin_right = 557.0
-margin_bottom = 495.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/WindowPos2"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Remember last session view"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/WindowPos2"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="ShowDate" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 510.0
-margin_right = 557.0
-margin_bottom = 535.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/ShowDate"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Show date in Dashboard"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/ShowDate"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="Borderless" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 550.0
-margin_right = 557.0
-margin_bottom = 575.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Borderless"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Borderless window"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Borderless"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="HidDPI" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 590.0
-margin_right = 557.0
-margin_bottom = 615.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/HidDPI"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "HiDPI"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/HidDPI"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="Category2" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 630.0
-margin_right = 557.0
-margin_bottom = 680.0
-custom_constants/separation = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Pomodoro" type="Label" parent="HBX/C/VBoxContainer/Category2"]
-margin_right = 93.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
-custom_fonts/font = ExtResource( 3 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/normal = SubResource("22")
 text = "Pomodoro"
-align = 1
-valign = 1
 
 [node name="PomodoroResetButton" type="Button" parent="HBX/C/VBoxContainer/Category2"]
-margin_left = 113.0
-margin_top = 10.0
-margin_right = 173.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 30 )
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "reset"
 
 [node name="WorkTimeLength" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 695.0
-margin_right = 557.0
-margin_bottom = 722.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/WorkTimeLength"]
-margin_top = 5.0
-margin_right = 350.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Work time length"
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/WorkTimeLength"]
-margin_left = 354.0
-margin_right = 414.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 60, 0 )
-theme = ExtResource( 6 )
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("6")
 suffix = "m"
 
 [node name="ShortPause" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 737.0
-margin_right = 557.0
-margin_bottom = 764.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/ShortPause"]
-margin_top = 5.0
-margin_right = 350.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Short pause length"
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/ShortPause"]
-margin_left = 354.0
-margin_right = 414.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 60, 0 )
-theme = ExtResource( 6 )
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("6")
 suffix = "m"
 
 [node name="LongPause" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 779.0
-margin_right = 557.0
-margin_bottom = 806.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/LongPause"]
-margin_top = 5.0
-margin_right = 350.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Long pause length"
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/LongPause"]
-margin_left = 354.0
-margin_right = 414.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 60, 0 )
-theme = ExtResource( 6 )
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("6")
 suffix = "m"
 
 [node name="LongPauseFreq" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 821.0
-margin_right = 557.0
-margin_bottom = 848.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/LongPauseFreq"]
-margin_top = 5.0
-margin_right = 350.0
-margin_bottom = 22.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Long pause frequency (after how many short breaks)"
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/LongPauseFreq"]
-margin_left = 354.0
-margin_right = 414.0
-margin_bottom = 27.0
-rect_min_size = Vector2( 60, 0 )
-theme = ExtResource( 6 )
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme = ExtResource("6")
 suffix = "x"
 
 [node name="NotesCategory" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 863.0
-margin_right = 557.0
-margin_bottom = 913.0
-custom_constants/separation = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Notes" type="Label" parent="HBX/C/VBoxContainer/NotesCategory"]
-margin_right = 53.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
-custom_fonts/font = ExtResource( 3 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/normal = SubResource("22")
 text = "Notes"
-align = 1
-valign = 1
 
 [node name="NotesResetButton" type="Button" parent="HBX/C/VBoxContainer/NotesCategory"]
-margin_left = 73.0
-margin_top = 10.0
-margin_right = 133.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 30 )
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "reset"
 
 [node name="LineNumbers" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 928.0
-margin_right = 557.0
-margin_bottom = 953.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/LineNumbers"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Show line numbers"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/LineNumbers"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="HighlightLine" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 968.0
-margin_right = 557.0
-margin_bottom = 993.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/HighlightLine"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Highlight current line"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/HighlightLine"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="Minimap" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 1008.0
-margin_right = 557.0
-margin_bottom = 1033.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Minimap"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Show minimap"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Minimap"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="SyntaxHighlighting" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 1048.0
-margin_right = 557.0
-margin_bottom = 1073.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/SyntaxHighlighting"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Syntax highlighting"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/SyntaxHighlighting"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
-[node name="Tabs" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 1088.0
-margin_right = 557.0
-margin_bottom = 1113.0
+[node name="TabBar" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
+layout_mode = 2
 
-[node name="Text" type="Label" parent="HBX/C/VBoxContainer/Tabs"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+[node name="Text" type="Label" parent="HBX/C/VBoxContainer/TabBar"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Draw tabs"
 
-[node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Tabs"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+[node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/TabBar"]
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="Spaces" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 1128.0
-margin_right = 557.0
-margin_bottom = 1153.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Spaces"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Draw spaces"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Spaces"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="Occurances" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 1168.0
-margin_right = 557.0
-margin_bottom = 1193.0
+layout_mode = 2
 
 [node name="Text" type="Label" parent="HBX/C/VBoxContainer/Occurances"]
-margin_top = 4.0
-margin_right = 350.0
-margin_bottom = 21.0
-rect_min_size = Vector2( 350, 0 )
-custom_colors/font_color = Color( 1, 1, 1, 0.611765 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("22")
 text = "Highlight all occurances"
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Occurances"]
-margin_left = 354.0
-margin_right = 379.0
-margin_bottom = 25.0
-theme = ExtResource( 6 )
+layout_mode = 2
+theme = ExtResource("6")
 
 [node name="QuotesCategory" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
-margin_top = 1208.0
-margin_right = 557.0
-margin_bottom = 1258.0
-custom_constants/separation = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Notes" type="Label" parent="HBX/C/VBoxContainer/QuotesCategory"]
-margin_right = 64.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 0, 50 )
-custom_colors/font_color = Color( 1, 1, 1, 0.862745 )
-custom_fonts/font = ExtResource( 3 )
-custom_styles/normal = SubResource( 22 )
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
+theme_override_fonts/font = ExtResource("3")
+theme_override_styles/normal = SubResource("22")
 text = "Quotes"
-align = 1
-valign = 1
 
 [node name="QuotesSaveButton" type="Button" parent="HBX/C/VBoxContainer/QuotesCategory"]
-margin_left = 84.0
-margin_top = 10.0
-margin_right = 144.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 30 )
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "save"
 
 [node name="NewQuote" type="Button" parent="HBX/C/VBoxContainer/QuotesCategory"]
-margin_left = 164.0
-margin_top = 10.0
-margin_right = 224.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 60, 30 )
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "new"
 
 [node name="QuoteBox" type="HBoxContainer" parent="HBX/C/VBoxContainer"]
 visible = false
-margin_top = 1233.0
-margin_right = 557.0
-margin_bottom = 1258.0
-rect_min_size = Vector2( 0, 25 )
-custom_constants/separation = 20
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="HBX/C/VBoxContainer/QuoteBox"]
 visible = false
-margin_top = 3.0
-margin_right = 9.0
-margin_bottom = 22.0
+layout_mode = 2
 text = "1"
 
 [node name="Delete" type="TextureButton" parent="HBX/C/VBoxContainer/QuoteBox"]
-modulate = Color( 1, 1, 1, 0.576471 )
-margin_right = 15.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 15, 0 )
-theme = ExtResource( 6 )
-texture_normal = ExtResource( 8 )
-expand = true
+modulate = Color(1, 1, 1, 0.576471)
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+theme = ExtResource("6")
+texture_normal = ExtResource("8")
 stretch_mode = 5
 
 [node name="Text" type="LineEdit" parent="HBX/C/VBoxContainer/QuoteBox"]
-margin_left = 35.0
-margin_right = 557.0
-margin_bottom = 25.0
-rect_min_size = Vector2( 350, 0 )
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-custom_colors/font_color = Color( 0.65098, 0.65098, 0.65098, 0.615686 )
-custom_fonts/font = ExtResource( 2 )
-custom_styles/normal = SubResource( 23 )
+theme_override_colors/font_color = Color(0.65098, 0.65098, 0.65098, 0.615686)
+theme_override_fonts/font = ExtResource("2")
+theme_override_styles/normal = SubResource("23")
 text = "This is a quote"
 
 [node name="Panel" type="Panel" parent="HBX"]
-margin_left = 571.0
-margin_top = 338.0
-margin_right = 971.0
-margin_bottom = 938.0
-rect_min_size = Vector2( 400, 600 )
-rect_clip_content = true
+clip_contents = true
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
 size_flags_vertical = 4
-custom_styles/panel = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = ExtResource("11")
 
 [node name="ColorPicker" type="ColorPicker" parent="HBX/Panel"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -126.0
-margin_top = -213.883
-margin_right = 182.0
-margin_bottom = 239.117
-theme = ExtResource( 16 )
-presets_enabled = false
+offset_left = -126.0
+offset_top = -213.883
+offset_right = 182.0
+offset_bottom = 239.117
+theme = ExtResource("16")
 presets_visible = false
-script = ExtResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("14")
 
 [node name="Button" type="Button" parent="HBX/Panel"]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -101.683
-margin_top = -53.6832
-margin_right = -14.6832
-margin_bottom = -14.6832
+offset_left = -101.683
+offset_top = -53.6832
+offset_right = -14.6832
+offset_bottom = -14.6832
 grow_vertical = 0
-theme = ExtResource( 5 )
+theme = ExtResource("5")
 text = "Close"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="HBX/Panel"]
-modulate = Color( 1, 1, 1, 0.372549 )
+modulate = Color(1, 1, 1, 0.372549)
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 mouse_filter = 2
-custom_styles/panel = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = ExtResource("9")
 
 [node name="Tween" type="Tween" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+script = null
 
-[connection signal="update_values" from="HBX/C/VBoxContainer/CatTheme" to="HBX/C/VBoxContainer/Primary/Option" method="_on_CatTheme_update_values"]
-[connection signal="update_values" from="HBX/C/VBoxContainer/CatTheme" to="HBX/C/VBoxContainer/Contrast" method="_on_CatTheme_update_values"]
+[connection signal="values_updated" from="HBX/C/VBoxContainer/CatTheme" to="HBX/C/VBoxContainer/Primary/Option" method="_on_CatTheme_values_updated"]
+[connection signal="values_updated" from="HBX/C/VBoxContainer/CatTheme" to="HBX/C/VBoxContainer/Contrast" method="_on_CatTheme_values_updated"]
 [connection signal="pressed" from="HBX/C/VBoxContainer/CatTheme/TheneResetButton" to="." method="_on_TheneResetButton_pressed"]
 [connection signal="setting_color" from="HBX/C/VBoxContainer/Primary/Option" to="HBX/C/VBoxContainer/CatTheme" method="_on_Option_setting_color"]
 [connection signal="setting_color" from="HBX/C/VBoxContainer/Primary/Option" to="HBX/Panel/ColorPicker" method="_on_Option_setting_color"]
@@ -948,7 +707,7 @@ __meta__ = {
 [connection signal="toggled" from="HBX/C/VBoxContainer/HighlightLine/Option" to="." method="_on_HighlightLineOption_toggled"]
 [connection signal="toggled" from="HBX/C/VBoxContainer/Minimap/Option" to="." method="_on_MinimapOption_toggled"]
 [connection signal="toggled" from="HBX/C/VBoxContainer/SyntaxHighlighting/Option" to="." method="_on_SyntaxHighlightingOption_toggled"]
-[connection signal="toggled" from="HBX/C/VBoxContainer/Tabs/Option" to="." method="_on_TabsOption_toggled"]
+[connection signal="toggled" from="HBX/C/VBoxContainer/TabBar/Option" to="." method="_on_TabsOption_toggled"]
 [connection signal="toggled" from="HBX/C/VBoxContainer/Spaces/Option" to="." method="_on_SpacesOption_toggled"]
 [connection signal="toggled" from="HBX/C/VBoxContainer/Occurances/Option" to="." method="_on_HighlightOccurancesOption_toggled"]
 [connection signal="pressed" from="HBX/C/VBoxContainer/QuotesCategory/QuotesSaveButton" to="." method="_on_QuotesSaveButton_pressed"]

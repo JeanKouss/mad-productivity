@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Themes/ChargeButtonTheme.tres" type="Theme" id=2]
 
 [node name="ChargeButton" type="Button"]
-margin_top = 546.0
-margin_right = 199.0
-margin_bottom = 576.0
-rect_min_size = Vector2( 0, 30 )
+offset_top = 546.0
+offset_right = 199.0
+offset_bottom = 576.0
+custom_minimum_size = Vector2( 0, 30 )
 theme = ExtResource( 2 )
 text = "Button"
 script = ExtResource( 1 )
@@ -16,7 +16,7 @@ script = ExtResource( 1 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_scale = Vector2( 1e-05, 1 )
+scale = Vector2( 1e-05, 1 )
 color = Color( 0.854902, 0.423529, 0.384314, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

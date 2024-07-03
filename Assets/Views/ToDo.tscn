@@ -6,15 +6,15 @@
 [ext_resource path="res://Scripts/Views/ToDo.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Views/Todos/TODOitem.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Views/Todos/CustomCheckBox.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Buttons/TimeTrackBtnWhite.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Buttons/TimeTrackBtnWhite.png" type="Texture2D" id=8]
 [ext_resource path="res://Scripts/Views/Todos/ProjectButton.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Fonts/Righteous20.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Assets/Fonts/Righteous20.tres" type="FontFile" id=10]
 [ext_resource path="res://Assets/Themes/LineEditCool.tres" type="Theme" id=11]
 [ext_resource path="res://Assets/Themes/CuteButtonTheme.tres" type="Theme" id=12]
 [ext_resource path="res://Assets/Themes/Dark/PanelHighlight.tres" type="StyleBox" id=13]
-[ext_resource path="res://Assets/Buttons/X_normal.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Buttons/X_normal.png" type="Texture2D" id=15]
 [ext_resource path="res://Assets/Audio/notification2.wav" type="AudioStream" id=18]
-[ext_resource path="res://Assets/Textures/SimpleGradient.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Textures/SimpleGradient.png" type="Texture2D" id=19]
 [ext_resource path="res://Scripts/CustomTransparentButton.gd" type="Script" id=20]
 
 [sub_resource type="StyleBoxEmpty" id=20]
@@ -83,8 +83,8 @@ TextEdit/styles/read_only = SubResource( 25 )
 [sub_resource type="StyleBoxEmpty" id=14]
 
 [node name="ToDo" type="Control"]
-margin_right = 990.0
-margin_bottom = 571.0
+offset_right = 990.0
+offset_bottom = 571.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,57 +94,57 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
-custom_constants/separation = 0
+theme_override_constants/separation = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
-margin_right = 990.0
-margin_bottom = 571.0
+offset_right = 990.0
+offset_bottom = 571.0
 size_flags_vertical = 3
 theme = ExtResource( 2 )
-custom_constants/autohide = 0
-custom_constants/separation = 35
+theme_override_constants/autohide = 0
+theme_override_constants/separation = 35
 split_offset = 243
 
 [node name="PanelL" type="Panel" parent="VBoxContainer/HSplitContainer"]
 self_modulate = Color( 1, 1, 1, 0.686275 )
-margin_right = 243.0
-margin_bottom = 571.0
-rect_clip_content = true
-custom_styles/panel = ExtResource( 3 )
+offset_right = 243.0
+offset_bottom = 571.0
+clip_contents = true
+theme_override_styles/panel = ExtResource( 3 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HSplitContainer/PanelL"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 13.0
-margin_top = 14.0
-margin_right = -13.0
-margin_bottom = -14.0
+offset_left = 13.0
+offset_top = 14.0
+offset_right = -13.0
+offset_bottom = -14.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ProjectButtons" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer"]
-margin_right = 207.0
-margin_bottom = 543.0
-rect_min_size = Vector2( 200, 440 )
+offset_right = 207.0
+offset_bottom = 543.0
+custom_minimum_size = Vector2( 200, 440 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 2 )
-custom_constants/separation = 20
+theme_override_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ProjectButton" type="Button" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons"]
 visible = false
-margin_right = 207.0
-margin_bottom = 25.0
-custom_colors/font_color = Color( 0.623529, 0.623529, 0.623529, 0.352941 )
-custom_colors/font_color_pressed = Color( 0.627451, 0.627451, 0.627451, 1 )
-custom_styles/focus = SubResource( 20 )
+offset_right = 207.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color( 0.623529, 0.623529, 0.623529, 0.352941 )
+theme_override_colors/font_pressed_color = Color( 0.627451, 0.627451, 0.627451, 1 )
+theme_override_styles/focus = SubResource( 20 )
 toggle_mode = true
 group = SubResource( 21 )
 text = "TODO PROJECT"
@@ -157,13 +157,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -38.9155
-margin_top = -16.7895
-margin_right = -18.9155
-margin_bottom = 17.2105
-rect_min_size = Vector2( 19, 0 )
-rect_pivot_offset = Vector2( 9.5, 9.5 )
-hint_tooltip = "Time track"
+offset_left = -38.9155
+offset_top = -16.7895
+offset_right = -18.9155
+offset_bottom = 17.2105
+custom_minimum_size = Vector2( 19, 0 )
+pivot_offset = Vector2( 9.5, 9.5 )
+tooltip_text = "Time track"
 mouse_filter = 1
 size_flags_horizontal = 9
 texture_normal = ExtResource( 8 )
@@ -179,15 +179,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -19.0
-margin_top = -19.5
-margin_right = 1.0
-margin_bottom = 20.5
-rect_min_size = Vector2( 20, 0 )
-rect_pivot_offset = Vector2( 10, 20 )
+offset_left = -19.0
+offset_top = -19.5
+offset_right = 1.0
+offset_bottom = 20.5
+custom_minimum_size = Vector2( 20, 0 )
+pivot_offset = Vector2( 10, 20 )
 focus_mode = 0
 mouse_filter = 1
-enabled_focus_mode = 0
+focus_mode = 0
 texture_normal = ExtResource( 15 )
 expand = true
 stretch_mode = 5
@@ -202,64 +202,64 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = 4.0
-margin_bottom = 7.0
-custom_styles/panel = ExtResource( 3 )
+offset_left = 7.0
+offset_top = 4.0
+offset_bottom = 7.0
+theme_override_styles/panel = ExtResource( 3 )
 
 [node name="CompleteBar" type="Panel" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton/CompleteBG"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = ExtResource( 13 )
+theme_override_styles/panel = ExtResource( 13 )
 
 [node name="CompleteSound" type="AudioStreamPlayer" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
 stream = ExtResource( 18 )
 
 [node name="PanelR" type="Panel" parent="VBoxContainer/HSplitContainer"]
-margin_left = 278.0
-margin_right = 990.0
-margin_bottom = 571.0
-rect_clip_content = true
-custom_styles/panel = SubResource( 22 )
+offset_left = 278.0
+offset_right = 990.0
+offset_bottom = 571.0
+clip_contents = true
+theme_override_styles/panel = SubResource( 22 )
 
 [node name="TaskScroll" type="ScrollContainer" parent="VBoxContainer/HSplitContainer/PanelR"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 15.0
-margin_right = -15.0
-margin_bottom = -15.0
+offset_top = 15.0
+offset_right = -15.0
+offset_bottom = -15.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TaskList" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll"]
-margin_right = 687.0
-margin_bottom = 541.0
+offset_right = 687.0
+offset_bottom = 541.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = SubResource( 26 )
-custom_constants/separation = 15
+theme_override_constants/separation = 15
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ProjectLineEdit" type="LineEdit" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList"]
 visible = false
-margin_right = 687.0
-margin_bottom = 26.0
+offset_right = 687.0
+offset_bottom = 26.0
 theme = ExtResource( 11 )
-custom_colors/font_color = Color( 0.623529, 0.623529, 0.623529, 1 )
-custom_fonts/font = ExtResource( 10 )
-custom_styles/normal = SubResource( 27 )
+theme_override_colors/font_color = Color( 0.623529, 0.623529, 0.623529, 1 )
+theme_override_fonts/font = ExtResource( 10 )
+theme_override_styles/normal = SubResource( 27 )
 text = "Project_name"
 
 [node name="TODOitem" type="Panel" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList"]
-margin_right = 687.0
-margin_bottom = 37.5
-rect_min_size = Vector2( 0, 37.5 )
-rect_pivot_offset = Vector2( -261.834, -35 )
-rect_clip_content = true
-custom_styles/panel = ExtResource( 1 )
+offset_right = 687.0
+offset_bottom = 37.5
+custom_minimum_size = Vector2( 0, 37.5 )
+pivot_offset = Vector2( -261.834, -35 )
+clip_contents = true
+theme_override_styles/panel = ExtResource( 1 )
 script = ExtResource( 5 )
 
 [node name="DeleteBtn" type="TextureButton" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem"]
@@ -267,15 +267,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -30.0
-margin_top = -19.75
-margin_right = -8.0
-margin_bottom = 20.25
-rect_min_size = Vector2( 20, 0 )
-rect_pivot_offset = Vector2( 10, 20 )
+offset_left = -30.0
+offset_top = -19.75
+offset_right = -8.0
+offset_bottom = 20.25
+custom_minimum_size = Vector2( 20, 0 )
+pivot_offset = Vector2( 10, 20 )
 focus_mode = 0
 mouse_filter = 1
-enabled_focus_mode = 0
+focus_mode = 0
 texture_normal = ExtResource( 15 )
 expand = true
 stretch_mode = 5
@@ -289,13 +289,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -58.7401
-margin_top = -18.75
-margin_right = -36.7401
-margin_bottom = 19.25
-rect_min_size = Vector2( 19, 0 )
-rect_pivot_offset = Vector2( 9.5, 9.5 )
-hint_tooltip = "Time track"
+offset_left = -58.7401
+offset_top = -18.75
+offset_right = -36.7401
+offset_bottom = 19.25
+custom_minimum_size = Vector2( 19, 0 )
+pivot_offset = Vector2( 9.5, 9.5 )
+tooltip_text = "Time track"
 mouse_filter = 1
 size_flags_horizontal = 9
 texture_normal = ExtResource( 8 )
@@ -309,30 +309,30 @@ __meta__ = {
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -57.0
-margin_bottom = 0.5
+offset_right = -57.0
+offset_bottom = 0.5
 mouse_filter = 2
-custom_constants/separation = 10
+theme_override_constants/separation = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox" type="Panel" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer"]
-margin_right = 38.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 38, 0 )
+offset_right = 38.0
+offset_bottom = 38.0
+custom_minimum_size = Vector2( 38, 0 )
 mouse_filter = 1
-custom_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer/CheckBox"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 15, 15 )
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+pivot_offset = Vector2( 15, 15 )
 mouse_filter = 2
 color = Color( 1, 1, 1, 0.0588235 )
 __meta__ = {
@@ -343,13 +343,13 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 9.0
-margin_top = 9.0
-margin_right = -8.0
-margin_bottom = -8.0
-rect_pivot_offset = Vector2( 10, 10 )
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -8.0
+offset_bottom = -8.0
+pivot_offset = Vector2( 10, 10 )
 mouse_filter = 1
-custom_styles/panel = ExtResource( 13 )
+theme_override_styles/panel = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -357,23 +357,23 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer/CheckBox"]
 
 [node name="Task" type="LineEdit" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer"]
-margin_left = 48.0
-margin_right = 120.0
-margin_bottom = 38.0
+offset_left = 48.0
+offset_right = 120.0
+offset_bottom = 38.0
 mouse_filter = 1
-custom_colors/font_color = Color( 0.631373, 0.631373, 0.631373, 1 )
-custom_styles/read_only = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/normal = SubResource( 14 )
+theme_override_colors/font_color = Color( 0.631373, 0.631373, 0.631373, 1 )
+theme_override_styles/read_only = SubResource( 12 )
+theme_override_styles/focus = SubResource( 13 )
+theme_override_styles/normal = SubResource( 14 )
 text = "Task"
 expand_to_text_length = true
 
 [node name="Date" type="Label" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer"]
-margin_left = 130.0
-margin_top = 9.0
-margin_right = 281.0
-margin_bottom = 28.0
-custom_colors/font_color = Color( 0.576471, 0.627451, 0.631373, 0.439216 )
+offset_left = 130.0
+offset_top = 9.0
+offset_right = 281.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color( 0.576471, 0.627451, 0.631373, 0.439216 )
 text = "21/5/2021 8:45:32"
 align = 2
 __meta__ = {
@@ -385,9 +385,9 @@ modulate = Color( 0.156863, 0.156863, 0.156863, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -81.0
-margin_top = -158.0
-margin_right = 81.0
+offset_left = -81.0
+offset_top = -158.0
+offset_right = 81.0
 mouse_filter = 2
 texture = ExtResource( 19 )
 expand = true
@@ -398,11 +398,11 @@ __meta__ = {
 [node name="NewTodoBtn" type="Button" parent="VBoxContainer/HSplitContainer/PanelR"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -134.0
-margin_top = 15.0
-margin_right = -25.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 38, 30 )
+offset_left = -134.0
+offset_top = 15.0
+offset_right = -25.0
+offset_bottom = 45.0
+custom_minimum_size = Vector2( 38, 30 )
 size_flags_horizontal = 0
 theme = ExtResource( 12 )
 text = "New task"
@@ -414,11 +414,11 @@ __meta__ = {
 visible = false
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 141.581
-margin_top = -61.7841
-margin_right = 250.581
-margin_bottom = -23.7841
-rect_min_size = Vector2( 38, 38 )
+offset_left = 141.581
+offset_top = -61.7841
+offset_right = 250.581
+offset_bottom = -23.7841
+custom_minimum_size = Vector2( 38, 38 )
 size_flags_horizontal = 0
 theme = ExtResource( 12 )
 text = "Check data"

@@ -4,6 +4,7 @@ signal set_done(really)
 
 var pressed : bool: set = set_pressed
 
+var tweener = create_tween()
 
 func set_pressed(new : bool) -> void:
 #	color = Defaults.custom_check_box_inactive

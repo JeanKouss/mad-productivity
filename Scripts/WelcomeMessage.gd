@@ -2,6 +2,8 @@ extends Label
 
 @export var resource: Resource
 
+var tweener = create_tween()
+
 var texts : Array
 var quote_index : int
 func _ready() -> void:
@@ -20,10 +22,11 @@ func _on_Previous_pressed() -> void:
 
 func show_new_text(quote_text) -> void:
 	text = "\"" + quote_text +  "\""
-	$Tween.remove_all()
-	$Tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 3.0, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property(self, "percent_visible", 0.0, 1.0, 2.0, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	tweener.stop()
+	self.modulate.a = 0.0
+	self.visible_ratio = 0.0
+	tweener.tween_property(self, "modulate:a", 1.0, 3.0)
+	tweener.parallel().tween_property(self, "percent_visible", 1.0, 2.0)
 
 func get_random_index() -> int:
 	return randi()%texts.size()

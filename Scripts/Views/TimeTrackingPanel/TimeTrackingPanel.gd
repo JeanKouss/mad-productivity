@@ -27,6 +27,9 @@ var curr_track_item : TimeTrackItem
 
 var notified : bool = false
 
+var tweener = create_tween()
+var progress_tweener = create_tween()
+
 func _ready() -> void:
 	Defaults.connect("track_item", Callable(self, "on_Defaults_track_item"))
 	Defaults.connect("toggle_time_tracking_panel", Callable(self, "on_toggle_time_tracking_panel"))
@@ -83,13 +86,12 @@ func check_unfinished_track() -> void:
 
 func toggle_self(really : bool) -> void:
 	update_pomo_number(false)
-	$Tween.remove_all()
+	tweener.stop()
 	var fin_size : int
 	fin_size = OPEN_SIZE if really else 0
 	var fin_opacity : float = 1.0 if really else 0.0
-	$Tween.interpolate_property(self, "custom_minimum_size:x", custom_minimum_size.x, fin_size, 0.6, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($Content, "modulate:a", $Content.modulate.a, fin_opacity, 0.6, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	tweener.tween_property(self, "custom_minimum_size:x", fin_size, 0.6)
+	tweener.parallel().tween_property($Content, "modulate:a", fin_opacity, 0.6)
 
 
 func toggle_view(which : int) -> void:
@@ -126,7 +128,7 @@ func start_time_tracking() -> void:
 	curr_track_item.start_tracking(Time.get_unix_time_from_system())
 	curr_track_item.type = state
 	
-	$ProgressTween.remove_all()
+	progress_tweener.stop()
 	
 	match state:
 		STATES.NORMAL:
@@ -288,9 +290,9 @@ func set_up_pomo_progress_bar() -> void:
 				
 	$Content/VBoxContainer/Time/PomodoroProgress.value = $Content/VBoxContainer/Time/PomodoroProgress.max_value
 	
-	$ProgressTween.remove_all()
-	$ProgressTween.interpolate_property($Content/VBoxContainer/Time/PomodoroProgress, "value", $Content/VBoxContainer/Time/PomodoroProgress.max_value, 0.0, $Content/VBoxContainer/Time/PomodoroProgress.max_value, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.0)
-	$ProgressTween.start()
+	progress_tweener.stop()
+	$Content/VBoxContainer/Time/PomodoroProgress.value = $Content/VBoxContainer/Time/PomodoroProgress.max_value;
+	progress_tweener.tween_property($Content/VBoxContainer/Time/PomodoroProgress, "value", 0.0, $Content/VBoxContainer/Time/PomodoroProgress.max_value)
 
 
 func get_pomodoro_phase_simple() -> int:
@@ -299,7 +301,7 @@ func get_pomodoro_phase_simple() -> int:
 
 func reset_time() -> void:
 	tracked_seconds = 0
-	$ProgressTween.remove_all()
+	progress_tweener.stop()
 	$Content/VBoxContainer/Time.text = "00:00"
 	$Content/VBoxContainer/Time/PomodoroProgress.value = $Content/VBoxContainer/Time/PomodoroProgress.max_value
 

@@ -8,6 +8,8 @@ var id : int
 var highlight_color : Color
 var idle_color : Color
 
+var tweener = create_tween()
+
 func _ready() -> void:
 	idle_color = Color(1, 1, 1, 0)
 	highlight_color = Defaults.ui_theme.super_dark
@@ -23,8 +25,8 @@ func fill_details(date : String, time : String, _name : String) -> void:
 func show_up() -> void:
 	$H/Delete.hide()
 	$H/TimeTrack.hide()
-	$Tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 1.0, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	modulate.a = 0.0
+	tweener.tween_property(self, "modulate:a", 1.0, 1.0)
 
 
 func _on_TrackedItem_mouse_entered() -> void:

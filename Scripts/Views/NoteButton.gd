@@ -9,6 +9,8 @@ var deleting = false
 @export var delete_btn_colour: Color
 var target_opacity : float
 
+var tweener = create_tween()
+
 func _ready() -> void:
 #	$DeleteBtn.modulate = delete_btn_colour
 #	$DeleteBtn.modulate.a = 1.0
@@ -23,16 +25,16 @@ func _ready() -> void:
 	
 func hide_delete(duration : float = 0.5) -> void:
 	# IMPORTANT : tween.remove_all() is the way to reset and stop all animation so that they cant overlap
-	$Tween.remove_all()
-	$Tween.interpolate_property($DeleteBtn, 'scale', Vector2.ONE ,Vector2.ONE * 0.01, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($DeleteBtn, 'modulate:a', modulate.a ,0.0, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	tweener.stop()
+	scale = Vector2.ONE
+	tweener.tween_property($DeleteBtn, 'scale', Vector2.ONE * 0.01, duration)
+	tweener.parallel().tween_property($DeleteBtn, 'modulate:a', 0.0, duration)
 	
 func show_delete(duration : float = 0.5) -> void:
-	$Tween.remove_all()
-	$Tween.interpolate_property($DeleteBtn, 'scale', Vector2.ONE * 0.01 ,Vector2.ONE, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($DeleteBtn, 'modulate:a', modulate.a ,target_opacity, duration, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	tweener.stop()
+	scale = Vector2.ONE * 0.01
+	tweener.tween_property($DeleteBtn, 'scale', Vector2.ONE, duration)
+	tweener.parallel().tween_property($DeleteBtn, 'modulate:a', target_opacity, duration)
 	
 	
 func mouse_entered() -> void:

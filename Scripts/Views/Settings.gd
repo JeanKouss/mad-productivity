@@ -6,6 +6,8 @@ var res : SettingsResource
 
 var quote_nodes : Array
 
+var tweener = create_tween()
+
 # UI state machine functions
 func entering_view() -> void:
 	Defaults.active_view_pointer = self
@@ -99,10 +101,9 @@ func update_view_text() -> void:
 
 
 func toggle_colour_panel(really : bool) -> void:
-	$Tween.remove_all()
-	$Tween.interpolate_property($HBX/Panel, "custom_minimum_size:x", $HBX/Panel.custom_minimum_size.x, 400 * float(really), 0.75, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($HBX/Panel, "modulate:a", $HBX/Panel.modulate.a, 1.0 * float(really), 0.75, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	tweener.stop()
+	tweener.tween_property($HBX/Panel, "custom_minimum_size:x", 400 * float(really), 0.75)
+	tweener.parallel().tween_property($HBX/Panel, "modulate:a", 1.0 * float(really), 0.75)
 
 
 # -- > SIGNALS <-- #

@@ -77,12 +77,6 @@ func _on_Maximize_toggled(button_pressed: bool) -> void:
 
 func change_window_title(_name : String) -> void:
 	$Left/ViewLabel.text = _name
-#	$Tween.stop_all()
-#	$Tween.interpolate_property($Right/ViewLabel, "percent_visible", $Right/ViewLabel.percent_visible, 0.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.0)
-#	$Tween.interpolate_property($Right/ViewLabel, "percent_visible", 0.0, 1.0, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT, 0.5)
-#	$Tween.start()
-#	yield(get_tree().create_timer(0.5), "timeout")
-#	$Right/ViewLabel.text = _name 
 
 
 # IMPORTANT: This func sets up the top area according to how to the new view

@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://6n2wsqhgbni7"]
 
-[ext_resource path="res://Scripts/Defaults.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Scripts/Defaults.gd" id="1"]
 
 [node name="Defaults" type="Node"]
-script = ExtResource( 1 )
-btn_active_colour = Color( 0.854902, 0.423529, 0.384314, 1 )
-btn_inactive_colour = Color( 0.137255, 0.301961, 0.305882, 1 )
-custom_check_box_active = Color( 0.109804, 0.784314, 0.419608, 1 )
-custom_check_box_inactive = Color( 0.0588235, 0.105882, 0.109804, 1 )
+script = ExtResource("1")
+btn_active_colour = Color(0.854902, 0.423529, 0.384314, 1)
+btn_inactive_colour = Color(0.137255, 0.301961, 0.305882, 1)
+custom_check_box_active = Color(0.109804, 0.784314, 0.419608, 1)
+custom_check_box_inactive = Color(0.0588235, 0.105882, 0.109804, 1)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

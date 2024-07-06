@@ -92,12 +92,15 @@ func check_resource(dir: DirAccess, path : String, resource_id : int) -> void:
 				print("Todo resource missing, creating it now!")
 			RESOURCES.SETTINGS:
 				resource = SettingsResource.new()
+				print('setting res created', resource)
 				
 		var _err : int = ResourceSaver.save(resource, path)
+		print('err', _err)
 		
 
 func load_settings() -> void:
-	settings_res = load(SETTINGS_SAVE_PATH + SETTINGS_SAVE_NAME)
+	# settings_res = load(SETTINGS_SAVE_PATH + SETTINGS_SAVE_NAME)
+	settings_res =  ResourceLoader.load(SETTINGS_SAVE_PATH + SETTINGS_SAVE_NAME)
 
 
 func init_window() -> void:

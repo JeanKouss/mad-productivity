@@ -415,4 +415,4 @@ func on_Defaults_track_item(_name : String) -> void:
 
 
 func on_toggle_time_tracking_panel(really : bool) -> void:
-	 toggle_self(really)
+	toggle_self(really)

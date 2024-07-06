@@ -1,2 +1,0 @@
-Sidebar.gd
-Scripts/Views/Dashboard.gd

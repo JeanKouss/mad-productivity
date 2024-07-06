@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and !event.pressed:
 		set_process_input(false)
 		Input.set_mouse_mode(0)
-		Input.warp_mouse(get_window().size - Vector2(10,14))
+		Input.warp_mouse(get_window().size - Vector2i(10,14))
 	
 	
 func _on_ResizeBtn_pressed() -> void:

@@ -12,6 +12,8 @@ var previous_view : int
 
 var number_of_views : int = 0
 
+var tweener = create_tween()
+
 func _ready() -> void:
 	update_theme()
 	update_particles()
@@ -71,9 +73,9 @@ func on_window_size_changed() -> void:
 
 
 func move_selection_box(where : float = 0.0, _add_parent_y : bool = false) -> void:
-	$Tween.interpolate_property($SelectionBox, "position:y", $SelectionBox.position.y, where, 0.5, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($SelectionBox/Particles, "speed_scale", 1.75, 0.2, 0.5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT, 0.0)
-	$Tween.start()
+	$SelectionBox/Particles.speed_scale = 1.75
+	tweener.tween_property($SelectionBox, "position:y", where, 0.5)
+	tweener.parallel.tween_property($SelectionBox/Particles, "speed_scale", 0.2, 0.5)
 
 
 func update_theme() -> void:

@@ -27,8 +27,8 @@ var curr_track_item : TimeTrackItem
 
 var notified : bool = false
 
-var tweener = create_tween()
-var progress_tweener = create_tween()
+var tweener : Tween
+var progress_tweener : Tween
 
 func _ready() -> void:
 	Defaults.connect("track_item", Callable(self, "on_Defaults_track_item"))
@@ -86,7 +86,9 @@ func check_unfinished_track() -> void:
 
 func toggle_self(really : bool) -> void:
 	update_pomo_number(false)
-	tweener.stop()
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	var fin_size : int
 	fin_size = OPEN_SIZE if really else 0
 	var fin_opacity : float = 1.0 if really else 0.0
@@ -128,7 +130,8 @@ func start_time_tracking() -> void:
 	curr_track_item.start_tracking(Time.get_unix_time_from_system())
 	curr_track_item.type = state
 	
-	progress_tweener.stop()
+	if progress_tweener :
+		progress_tweener.kill()
 	
 	match state:
 		STATES.NORMAL:
@@ -290,7 +293,9 @@ func set_up_pomo_progress_bar() -> void:
 				
 	$Content/VBoxContainer/Time/PomodoroProgress.value = $Content/VBoxContainer/Time/PomodoroProgress.max_value
 	
-	progress_tweener.stop()
+	if progress_tweener :
+		progress_tweener.kill()
+	progress_tweener = create_tween()
 	$Content/VBoxContainer/Time/PomodoroProgress.value = $Content/VBoxContainer/Time/PomodoroProgress.max_value;
 	progress_tweener.tween_property($Content/VBoxContainer/Time/PomodoroProgress, "value", 0.0, $Content/VBoxContainer/Time/PomodoroProgress.max_value)
 
@@ -301,7 +306,8 @@ func get_pomodoro_phase_simple() -> int:
 
 func reset_time() -> void:
 	tracked_seconds = 0
-	progress_tweener.stop()
+	if progress_tweener :
+		progress_tweener.kill()
 	$Content/VBoxContainer/Time.text = "00:00"
 	$Content/VBoxContainer/Time/PomodoroProgress.value = $Content/VBoxContainer/Time/PomodoroProgress.max_value
 

@@ -4,7 +4,7 @@ signal set_done(really)
 
 var pressed : bool: set = set_pressed
 
-var tweener = create_tween()
+var tweener : Tween
 
 func set_pressed(new : bool) -> void:
 #	color = Defaults.custom_check_box_inactive
@@ -19,11 +19,12 @@ func set_pressed(new : bool) -> void:
 	emit_signal("set_done", new)
 
 
-func animate_checkbox(start : float, end : float) -> void:
-	$Tween.remove_all()
-	$Tween.interpolate_property($CheckBox2, "rotation", $CheckBox2.rotation, 360 * end, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($CheckBox2, "scale", $CheckBox2.scale, Vector2.ONE * end, 0.5, Tween.TRANS_BACK, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+func animate_checkbox(_start : float, end : float) -> void:
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
+	tweener.tween_property($CheckBox2, "rotation", 360 * end, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tweener.parallel().tween_property($CheckBox2, "scale", Vector2.ONE * end, 0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	$CheckBox2.visible = true
 #	$CheckBox2.visible = bool(floor(end))
 

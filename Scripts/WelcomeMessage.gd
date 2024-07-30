@@ -2,7 +2,7 @@ extends Label
 
 @export var resource: Resource
 
-var tweener = create_tween()
+var tweener : Tween
 
 var texts : Array
 var quote_index : int
@@ -22,7 +22,9 @@ func _on_Previous_pressed() -> void:
 
 func show_new_text(quote_text) -> void:
 	text = "\"" + quote_text +  "\""
-	tweener.stop()
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	self.modulate.a = 0.0
 	self.visible_ratio = 0.0
 	tweener.tween_property(self, "modulate:a", 1.0, 3.0)

@@ -6,7 +6,7 @@ var res : SettingsResource
 
 var quote_nodes : Array
 
-var tweener = create_tween()
+var tweener : Tween
 
 # UI state machine functions
 func entering_view() -> void:
@@ -101,7 +101,9 @@ func update_view_text() -> void:
 
 
 func toggle_colour_panel(really : bool) -> void:
-	tweener.stop()
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	tweener.tween_property($HBX/Panel, "custom_minimum_size:x", 400 * float(really), 0.75)
 	tweener.parallel().tween_property($HBX/Panel, "modulate:a", 1.0 * float(really), 0.75)
 

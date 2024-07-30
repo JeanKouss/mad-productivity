@@ -367,7 +367,7 @@ func change_body_font_size(index : int) -> void:
 	elif index == 2:
 		size = 18
 	var font_res : FontFile = load("res://Assets/Fonts/Roboto12.tres")
-	font_res.size = size
+	font_res.fixed_size = size
 	save_settings_resource()
 
 

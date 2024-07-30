@@ -9,7 +9,7 @@ var deleting = false
 @export var delete_btn_colour: Color
 var target_opacity : float
 
-var tweener = create_tween()
+var tweener : Tween 
 
 func _ready() -> void:
 #	$DeleteBtn.modulate = delete_btn_colour
@@ -24,14 +24,17 @@ func _ready() -> void:
 	
 	
 func hide_delete(duration : float = 0.5) -> void:
-	# IMPORTANT : tween.remove_all() is the way to reset and stop all animation so that they cant overlap
-	tweener.stop()
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	scale = Vector2.ONE
 	tweener.tween_property($DeleteBtn, 'scale', Vector2.ONE * 0.01, duration)
 	tweener.parallel().tween_property($DeleteBtn, 'modulate:a', 0.0, duration)
 	
 func show_delete(duration : float = 0.5) -> void:
-	tweener.stop()
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	scale = Vector2.ONE * 0.01
 	tweener.tween_property($DeleteBtn, 'scale', Vector2.ONE, duration)
 	tweener.parallel().tween_property($DeleteBtn, 'modulate:a', target_opacity, duration)

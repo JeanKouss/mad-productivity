@@ -6,7 +6,7 @@ signal charged
 
 const LENGTH : float = 1.0
 
-var tweener = create_tween()
+var tweener : Tween
 
 func _ready() -> void:
 	Defaults.connect("theme_changed", Callable(self, "on_theme_changed"))
@@ -19,6 +19,9 @@ func on_button_down() -> void:
 	if instant:
 		emit_signal("charged")
 		return
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	tweener.tween_property($ChargeCol, "scale:x", 1.0, LENGTH)
 
 

@@ -8,7 +8,7 @@ var id : int
 var highlight_color : Color
 var idle_color : Color
 
-var tweener = create_tween()
+var tweener : Tween
 
 func _ready() -> void:
 	idle_color = Color(1, 1, 1, 0)
@@ -26,6 +26,9 @@ func show_up() -> void:
 	$H/Delete.hide()
 	$H/TimeTrack.hide()
 	modulate.a = 0.0
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
 	tweener.tween_property(self, "modulate:a", 1.0, 1.0)
 
 

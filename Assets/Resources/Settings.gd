@@ -3,7 +3,7 @@ extends Resource
 
 const THEME_SAVE_PATH : String = "user://theme.tres"
 
-@export var version: int = 0.1
+@export var version: int = 1
 
 @export var name: String = "Name"
 @export var title: String = "User title"

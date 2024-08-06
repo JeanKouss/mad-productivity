@@ -28,11 +28,11 @@ func toggle_view(new : int = -1, target : String = "") -> void:
 	if target != "":
 		$MainWorkspace/HBX/VBX/Views.get_node(target).show()
 		$MainWorkspace/HBX/VBX/Views.get_node(target).entering_view()
-		active_view = $MainWorkspace/HBX/VBX/Views.get_node(target).get_position_in_parent()
+		active_view = $MainWorkspace/HBX/VBX/Views.get_node(target).get_index()
 	else:
 		$MainWorkspace/HBX/VBX/Views.get_child(new).show()
 		$MainWorkspace/HBX/VBX/Views.get_child(new).entering_view()
-		active_view = $MainWorkspace/HBX/VBX/Views.get_child(new).get_position_in_parent()
+		active_view = $MainWorkspace/HBX/VBX/Views.get_child(new).get_index()
 		
 	Defaults.active_view = active_view
 	active_view_name = target

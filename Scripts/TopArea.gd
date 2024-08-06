@@ -21,7 +21,7 @@ func _ready() -> void:
 		set_process_input(false)
 	
 	connect_signals()
-	var res = load(Defaults.TIMETRACKS_SAVE_PATH + Defaults.TIMETRACKS_SAVE_NAME)	# TODO: access this resource 
+	# var res = load(Defaults.TIMETRACKS_SAVE_PATH + Defaults.TIMETRACKS_SAVE_NAME)	# TODO: access this resource 
 		
 		
 func connect_signals() -> void:
@@ -49,7 +49,7 @@ func _input(event: InputEvent) -> void:
 		if (get_window().mode == Window.MODE_MAXIMIZED):
 			offset *=  Defaults.settings_res.minimized_window_size.x / get_window().get_size().x
 			$Right/Maximize.button_pressed = false
-		get_window().set_position(get_window().get_position() + event.get_global_position() - offset)
+		get_window().set_position(Vector2(get_window().position) + event.get_global_position() - offset)
 
 
 func _on_Minimuze_pressed() -> void:

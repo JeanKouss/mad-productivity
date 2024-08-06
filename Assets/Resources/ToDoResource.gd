@@ -23,7 +23,7 @@ func get_tasks() -> Dictionary:
 
 
 func get_tasks_in_project(idx : int) -> Dictionary:
-	var dic : Dictionary
+	var dic : Dictionary = {}
 	for i in tasks:
 		if tasks[i].project == idx:
 			dic[i] = tasks[i]

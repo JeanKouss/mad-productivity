@@ -6,10 +6,11 @@ signal delete_project(id)
 var id : int
 var finished : bool = false
 
+var tweener : Tween
+
 func _ready() -> void:
 	connect("mouse_entered", Callable(self, "on_mouse_entered"))
 	connect("mouse_exited", Callable(self, "on_mouse_exited"))
-	$Tween.connect("tween_all_completed", Callable(self, "on_tween_done"))
 	on_mouse_exited()
 	update_theme()
 	
@@ -40,14 +41,15 @@ func _on_DeleteBtn_pressed() -> void:
 
 func set_percent_done(perc : float = 0.0) -> void:
 	finished = bool(floor(perc))
-	$Tween.remove_all()
-	$Tween.interpolate_property($CompleteBG/CompleteBar, "scale:x", $CompleteBG/CompleteBar.scale.x, perc, 0.5, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.interpolate_property($CompleteBG/CompleteBar, "modulate:a", $CompleteBG/CompleteBar.modulate.a, perc, 0.5, Tween.TRANS_EXPO, Tween.EASE_OUT, 0.0)
-	$Tween.start()
+	if tweener :
+		tweener.kill()
+	tweener = create_tween()
+	tweener.tween_property($CompleteBG/CompleteBar, "scale:x", perc, 0.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	tweener.parallel().tween_property($CompleteBG/CompleteBar, "modulate:a", perc, 0.5).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 #	$CompleteBG/CompleteBar.rect_scale.x = clamp(perc, 0.0, 1.0)
 
 
-func on_tween_done() -> void:
+func on_tween_done() -> void: # Previously emited when tween completed
 	if finished:
 #		$CompleteSound.play()
 		pass

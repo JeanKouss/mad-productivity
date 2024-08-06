@@ -302,9 +302,9 @@ func get_formatted_time_from_seconds(_secs : int) -> String:
 	if _secs < 0: 
 		_secs = abs(_secs)
 		neg = true
-	var hours : int = _secs / 3600
+	var hours : int = int(_secs / 3600.)
 	_secs -= hours * 3600
-	var minutes : int = _secs / 60
+	var minutes : int = int(_secs / 60.)
 	_secs -= minutes * 60
 	
 	if neg:

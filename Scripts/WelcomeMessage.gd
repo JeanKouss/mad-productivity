@@ -28,7 +28,7 @@ func show_new_text(quote_text) -> void:
 	self.modulate.a = 0.0
 	self.visible_ratio = 0.0
 	tweener.tween_property(self, "modulate:a", 1.0, 3.0)
-	tweener.parallel().tween_property(self, "percent_visible", 1.0, 2.0)
+	tweener.parallel().tween_property(self, "visible_ratio", 1.0, 2.0)
 
 func get_random_index() -> int:
 	return randi()%texts.size()

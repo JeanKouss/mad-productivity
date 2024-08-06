@@ -35,7 +35,7 @@ func leaving_view() -> void:
 	
 	
 func load_time_tracks() -> void:
-	var unfinished_track : bool = false
+	var _unfinished_track : bool = false
 	for i in res.tracks:
 		var item = res.tracks[i]
 		if item.is_finished():
@@ -67,8 +67,8 @@ func create_track_visual(_name : String, _date : int, _time : int, _id : int) ->
 func get_hours_minutes_seconds(_time : int) -> Array:
 	# calculate
 	var seconds : = str(_time % 60)
-	var temp_hours : int = (_time / 60) / 60
-	var minutes : int = (_time / 60) - (60 * temp_hours)
+	var temp_hours : int = int((_time / 60.) / 60.)
+	var minutes : int = int((_time / 60.) - (60. * temp_hours))
 	var hours : = str(temp_hours)
 	#stylize
 	seconds = ("%02d" % int(seconds))

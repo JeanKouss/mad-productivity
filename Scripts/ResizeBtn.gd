@@ -17,13 +17,13 @@ func _input(event: InputEvent) -> void:
 		get_window().size.y = clamp(get_window().size.y + event.relative.y, MIN_WIN_SIZE.y, DisplayServer.screen_get_size().y - get_window().position.y)
 	if event is InputEventMouseButton and !event.pressed:
 		set_process_input(false)
-		Input.set_mouse_mode(0)
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		Input.warp_mouse(get_window().size - Vector2i(10,14))
 	
 	
 func _on_ResizeBtn_pressed() -> void:
 	set_process_input(true)
-	Input.set_mouse_mode(2)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _on_ResizeBtn_mouse_entered() -> void:

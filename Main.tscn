@@ -1,312 +1,254 @@
-[gd_scene load_steps=50 format=2]
+[gd_scene load_steps=49 format=3 uid="uid://c08k71svr2jv5"]
 
-[ext_resource path="res://Assets/Icons/MD_concept.png" type="Texture2D" id=1]
-[ext_resource path="res://Assets/Icons/NoteTaking.png" type="Texture2D" id=2]
-[ext_resource path="res://Assets/Icons/TimeTracking.png" type="Texture2D" id=3]
-[ext_resource path="res://Assets/Icons/ToDo.png" type="Texture2D" id=4]
-[ext_resource path="res://Scripts/Sidebar.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Buttons/AppBar/MaximizeBtn.png" type="Texture2D" id=6]
-[ext_resource path="res://Assets/Themes/CuteButtonTheme.tres" type="Theme" id=7]
-[ext_resource path="res://Assets/Buttons/AppBar/ExitBtn.png" type="Texture2D" id=8]
-[ext_resource path="res://Scripts/CustomTextureButton.gd" type="Script" id=9]
-[ext_resource path="res://Scripts/TopArea.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/CustomTransparentButton.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Views/Dashboard.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Views/Game.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Assets/Views/TimeTracking.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scripts/Main.gd" type="Script" id=15]
-[ext_resource path="res://Scripts/Views.gd" type="Script" id=16]
-[ext_resource path="res://Assets/Buttons/Resize.png" type="Texture2D" id=17]
-[ext_resource path="res://Assets/Icons/Profile.png" type="Texture2D" id=18]
-[ext_resource path="res://Assets/Views/Notes.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/Fonts/Righteous50.tres" type="FontFile" id=20]
-[ext_resource path="res://Assets/Themes/Roboto12Clean.tres" type="Theme" id=21]
-[ext_resource path="res://Assets/Views/ToDo.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Assets/Fonts/Righteous20.tres" type="FontFile" id=23]
-[ext_resource path="res://Assets/Themes/Dark/PanelGreenLight.tres" type="StyleBox" id=24]
-[ext_resource path="res://Assets/Fonts/Roboto12.tres" type="FontFile" id=25]
-[ext_resource path="res://Scripts/Views/Profile.gd" type="Script" id=27]
-[ext_resource path="res://Scripts/ResizeBtn.gd" type="Script" id=32]
-[ext_resource path="res://Assets/Buttons/AppBar/MinimizeBtn.png" type="Texture2D" id=33]
-[ext_resource path="res://Assets/Icons/Settings.png" type="Texture2D" id=34]
-[ext_resource path="res://Assets/Views/TimeTrackingPanel.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Assets/Views/Settings.tscn" type="PackedScene" id=36]
-[ext_resource path="res://Scripts/Shortcuts.gd" type="Script" id=37]
-[ext_resource path="res://Assets/Themes/Dark/LineEditTop.tres" type="StyleBox" id=38]
-[ext_resource path="res://Assets/Fonts/NovaMono20.tres" type="FontFile" id=39]
-[ext_resource path="res://Assets/Fonts/Righteous-Regular.ttf" type="FontFile" id=40]
-[ext_resource path="res://Assets/Themes/Dark/PanelDarkGreen.tres" type="StyleBox" id=43]
-[ext_resource path="res://Assets/Themes/Dark/PanelGreen.tres" type="StyleBox" id=44]
-[ext_resource path="res://Assets/Themes/Dark/PanelGreenNoBorder.tres" type="StyleBox" id=45]
-[ext_resource path="res://Assets/Icons/gamepad.png" type="Texture2D" id=46]
+[ext_resource type="Texture2D" uid="uid://cagxfysnenkwc" path="res://Assets/Icons/MD_concept.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dfsle7iw1ehmk" path="res://Assets/Icons/NoteTaking.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cnjgxgadqpqge" path="res://Assets/Icons/TimeTracking.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dv38s6epnc64t" path="res://Assets/Icons/ToDo.png" id="4"]
+[ext_resource type="Script" path="res://Scripts/Sidebar.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://d0u4kl5fld3a7" path="res://Assets/Buttons/AppBar/MaximizeBtn.png" id="6"]
+[ext_resource type="Theme" uid="uid://18v18hamqe1f" path="res://Assets/Themes/CuteButtonTheme.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://bckxyib1q1waf" path="res://Assets/Buttons/AppBar/ExitBtn.png" id="8"]
+[ext_resource type="Script" path="res://Scripts/CustomTextureButton.gd" id="9"]
+[ext_resource type="Script" path="res://Scripts/TopArea.gd" id="10"]
+[ext_resource type="Script" path="res://Scripts/CustomTransparentButton.gd" id="11"]
+[ext_resource type="PackedScene" uid="uid://cmfkk2m7lmr0a" path="res://Assets/Views/Dashboard.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://xqpmxv7kvr1i" path="res://Assets/Views/Game.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://hyniyjb0dyca" path="res://Assets/Views/TimeTracking.tscn" id="14"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="15"]
+[ext_resource type="Script" path="res://Scripts/Views.gd" id="16"]
+[ext_resource type="Texture2D" uid="uid://cjgif8ywm4s4u" path="res://Assets/Buttons/Resize.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bdwia3cfenhns" path="res://Assets/Icons/Profile.png" id="18"]
+[ext_resource type="PackedScene" uid="uid://g4v7cfoaf7lk" path="res://Assets/Views/Notes.tscn" id="19"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Righteous50.tres" id="20"]
+[ext_resource type="Theme" uid="uid://c5lr422jpugj7" path="res://Assets/Themes/Roboto12Clean.tres" id="21"]
+[ext_resource type="PackedScene" uid="uid://ccv0hgfro8dcu" path="res://Assets/Views/ToDo.tscn" id="22"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Righteous20.tres" id="23"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelGreenLight.tres" id="24"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Roboto12.tres" id="25"]
+[ext_resource type="Script" path="res://Scripts/Views/Profile.gd" id="27"]
+[ext_resource type="Script" path="res://Scripts/ResizeBtn.gd" id="32"]
+[ext_resource type="Texture2D" uid="uid://bapf1w5f6pkir" path="res://Assets/Buttons/AppBar/MinimizeBtn.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://had50fou2noj" path="res://Assets/Icons/Settings.png" id="34"]
+[ext_resource type="PackedScene" uid="uid://dlv2u25a2t3j6" path="res://Assets/Views/TimeTrackingPanel.tscn" id="35"]
+[ext_resource type="PackedScene" uid="uid://ejbj1frauxwc" path="res://Assets/Views/Settings.tscn" id="36"]
+[ext_resource type="Script" path="res://Scripts/Shortcuts.gd" id="37"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/LineEditTop.tres" id="38"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/NovaMono20.tres" id="39"]
+[ext_resource type="FontFile" uid="uid://cc7ubmfm007ke" path="res://Assets/Fonts/Righteous-Regular.ttf" id="40"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelDarkGreen.tres" id="43"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelGreen.tres" id="44"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelGreenNoBorder.tres" id="45"]
+[ext_resource type="Texture2D" uid="uid://dwb4j2rebc16e" path="res://Assets/Icons/gamepad.png" id="46"]
 
-[sub_resource type="ButtonGroup" id=3]
+[sub_resource type="Gradient" id="4"]
+offsets = PackedFloat32Array(0, 0.219355, 0.36129, 1)
+colors = PackedColorArray(0.839844, 0.839844, 0.839844, 0, 0.910156, 0.910156, 0.910156, 1, 0.867188, 0.867188, 0.867188, 0.529412, 0.855469, 0.855469, 0.855469, 0)
 
-[sub_resource type="Gradient" id=4]
-offsets = PackedFloat32Array( 0, 0.219355, 0.36129, 1 )
-colors = PackedColorArray( 0.839844, 0.839844, 0.839844, 0, 0.910156, 0.910156, 0.910156, 1, 0.867188, 0.867188, 0.867188, 0.529412, 0.855469, 0.855469, 0.855469, 0 )
+[sub_resource type="FontFile" id="25"]
+fallbacks = Array[Font]([ExtResource("40")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="FontFile" id=25]
-size = 20
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 40 )
+[sub_resource type="StyleBoxEmpty" id="19"]
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="StyleBoxEmpty" id="18"]
 
-[sub_resource type="StyleBoxEmpty" id=18]
+[sub_resource type="StyleBoxEmpty" id="17"]
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id="22"]
 
-[sub_resource type="StyleBoxEmpty" id=20]
+[sub_resource type="StyleBoxEmpty" id="21"]
 
-[sub_resource type="StyleBoxEmpty" id=21]
+[sub_resource type="StyleBoxEmpty" id="20"]
 
-[sub_resource type="StyleBoxEmpty" id=22]
-
-[sub_resource type="StyleBoxFlat" id=16]
-bg_color = Color( 0.0862745, 0.152941, 0.160784, 1 )
+[sub_resource type="StyleBoxFlat" id="16"]
+bg_color = Color(0.0862745, 0.152941, 0.160784, 1)
 
 [node name="MainWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 15 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15")
 
 [node name="MainWorkspace" type="Panel" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = ExtResource( 43 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = ExtResource("43")
 
 [node name="HBX" type="HBoxContainer" parent="MainWorkspace"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 0
 
 [node name="Sidebar" type="Panel" parent="MainWorkspace/HBX" groups=["UI_THEME"]]
-offset_right = 50.0
-offset_bottom = 650.0
-custom_minimum_size = Vector2( 50, 0 )
-theme_override_styles/panel = ExtResource( 44 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("44")
+script = ExtResource("5")
 
 [node name="Buttons" type="VBoxContainer" parent="MainWorkspace/HBX/Sidebar"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
 
 [node name="TimeTrackPanel" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-offset_left = 13.0
-offset_right = 36.0
-offset_bottom = 50.0
-custom_minimum_size = Vector2( 23, 50 )
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 toggle_mode = true
-texture_normal = ExtResource( 3 )
-expand = true
+texture_normal = ExtResource("3")
 stretch_mode = 5
-script = ExtResource( 11 )
+script = ExtResource("11")
 
 [node name="Control2" type="Control" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-offset_top = 54.0
-offset_right = 50.0
-offset_bottom = 161.0
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="HomeBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 165.0
-offset_right = 36.0
-offset_bottom = 215.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 1 )
-expand = true
+texture_normal = ExtResource("1")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "Dashboard"
 
 [node name="NotesBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 219.0
-offset_right = 36.0
-offset_bottom = 269.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 2 )
-expand = true
+texture_normal = ExtResource("2")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "Notes"
 
 [node name="TimeTrackingBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 273.0
-offset_right = 36.0
-offset_bottom = 323.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 3 )
-expand = true
+texture_normal = ExtResource("3")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "TimeTracking"
 
 [node name="TodosBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 327.0
-offset_right = 36.0
-offset_bottom = 377.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 4 )
-expand = true
+texture_normal = ExtResource("4")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "ToDo"
 
 [node name="GameBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 381.0
-offset_right = 36.0
-offset_bottom = 431.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 46 )
-expand = true
+texture_normal = ExtResource("46")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "Game"
 
 [node name="Control" type="Control" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-offset_top = 435.0
-offset_right = 50.0
-offset_bottom = 542.0
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ProfileBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 546.0
-offset_right = 36.0
-offset_bottom = 596.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 18 )
-expand = true
+texture_normal = ExtResource("18")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "Profile"
 bottom = true
 
 [node name="SettingsBtn" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
-modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
-offset_left = 13.0
-offset_top = 600.0
-offset_right = 36.0
-offset_bottom = 650.0
-custom_minimum_size = Vector2( 23, 50 )
+modulate = Color(0.521569, 0.521569, 0.521569, 1)
+custom_minimum_size = Vector2(23, 50)
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
-group = SubResource( 3 )
-texture_normal = ExtResource( 34 )
-expand = true
+texture_normal = ExtResource("34")
 stretch_mode = 5
-script = ExtResource( 9 )
+script = ExtResource("9")
 target = "Settings"
 bottom = true
 
 [node name="SelectionBox" type="ColorRect" parent="MainWorkspace/HBX/Sidebar"]
+custom_minimum_size = Vector2(2, 50)
+layout_mode = 0
 offset_top = 695.992
 offset_right = 2.0
 offset_bottom = 745.992
-custom_minimum_size = Vector2( 2, 50 )
-color = Color( 0.854902, 0.423529, 0.384314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0.854902, 0.423529, 0.384314, 1)
 
 [node name="Particles" type="CPUParticles2D" parent="MainWorkspace/HBX/Sidebar/SelectionBox"]
-modulate = Color( 0.854902, 0.423529, 0.384314, 1 )
+modulate = Color(0.854902, 0.423529, 0.384314, 1)
 show_behind_parent = true
-position = Vector2( 54.7194, 27.3138 )
+position = Vector2(54.7194, 27.3138)
 rotation = -1.5708
 amount = 16
 speed_scale = 0.2
-local_coords = false
 emission_shape = 2
-emission_rect_extents = Vector2( 20, 1 )
-direction = Vector2( 0, 1 )
+emission_sphere_radius = 1.0
+direction = Vector2(0, 1)
 spread = 20.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 94.74
-angle = 720.0
-angle_random = 1.0
-scale_amount = 5.0
-scale_amount_random = 1.0
-color_ramp = SubResource( 4 )
+gravity = Vector2(0, 0)
+color_ramp = SubResource("4")
 
-[node name="Tween" type="Tween" parent="MainWorkspace/HBX/Sidebar"]
-
-[node name="TimeTrackingPanel" parent="MainWorkspace/HBX" instance=ExtResource( 35 )]
-offset_right = 50.0
+[node name="TimeTrackingPanel" parent="MainWorkspace/HBX" instance=ExtResource("35")]
+layout_mode = 2
 
 [node name="VBX" type="VBoxContainer" parent="MainWorkspace/HBX"]
-offset_left = 50.0
-offset_right = 1100.0
-offset_bottom = 650.0
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="TopArea" type="Control" parent="MainWorkspace/HBX/VBX"]
-offset_right = 1050.0
-offset_bottom = 45.0
-custom_minimum_size = Vector2( 0, 45 )
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
 size_flags_horizontal = 3
-theme = ExtResource( 21 )
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme = ExtResource("21")
+script = ExtResource("10")
 
 [node name="ColorRect" type="Panel" parent="MainWorkspace/HBX/VBX/TopArea"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = ExtResource( 45 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = ExtResource("45")
 
 [node name="Title" type="HBoxContainer" parent="MainWorkspace/HBX/VBX/TopArea"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -316,88 +258,59 @@ offset_top = -20.0
 offset_right = 88.5
 offset_bottom = 20.0
 mouse_filter = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Left" type="HBoxContainer" parent="MainWorkspace/HBX/VBX/TopArea"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/separation = 0
 alignment = 1
 
 [node name="Control" type="Control" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
-offset_right = 14.0
-offset_bottom = 45.0
-custom_minimum_size = Vector2( 14, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
 
 [node name="ViewLabel" type="Label" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
-offset_left = 14.0
-offset_top = 9.0
-offset_right = 71.0
-offset_bottom = 35.0
-theme_override_colors/font_color = Color( 1, 1, 1, 0.478431 )
-theme_override_fonts/font = SubResource( 25 )
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.478431)
+theme_override_fonts/font = SubResource("25")
 text = "Notes"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Control3" type="Control" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
-offset_left = 71.0
-offset_right = 84.0
-offset_bottom = 45.0
-custom_minimum_size = Vector2( 13, 0 )
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
 
 [node name="TimeTrackTime" type="Label" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
 visible = false
-offset_left = 46.0
-offset_top = 8.0
-offset_right = 146.0
-offset_bottom = 37.0
-custom_minimum_size = Vector2( 100, 0 )
-theme_override_fonts/font = ExtResource( 39 )
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("39")
 text = "00:00:00"
 clip_text = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="NewBtn" type="Button" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
-offset_left = 84.0
-offset_top = 8.0
-offset_right = 134.0
-offset_bottom = 35.024
-custom_minimum_size = Vector2( 50, 27.024 )
-focus_mode = 0
+custom_minimum_size = Vector2(50, 27.024)
+layout_mode = 2
 size_flags_vertical = 4
-theme = ExtResource( 7 )
+focus_mode = 0
+theme = ExtResource("7")
 text = "NEW"
 
 [node name="LineEdit" type="LineEdit" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
-offset_left = 134.0
-offset_top = 8.0
-offset_right = 334.0
-offset_bottom = 35.1
-custom_minimum_size = Vector2( 200, 27.1 )
-focus_mode = 1
+custom_minimum_size = Vector2(200, 27.1)
+layout_mode = 2
 size_flags_vertical = 4
-theme_override_styles/normal = ExtResource( 38 )
+focus_mode = 1
+theme_override_styles/normal = ExtResource("38")
 placeholder_text = "type text here"
 
 [node name="Control2" type="Control" parent="MainWorkspace/HBX/VBX/TopArea/Left"]
-offset_left = 334.0
-offset_right = 1050.0
-offset_bottom = 45.0
-mouse_filter = 2
+layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="Right" type="HBoxContainer" parent="MainWorkspace/HBX/VBX/TopArea"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 612.0
@@ -408,217 +321,164 @@ grow_horizontal = 0
 mouse_filter = 2
 theme_override_constants/separation = 14
 alignment = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ViewInfoPanel" type="Panel" parent="MainWorkspace/HBX/VBX/TopArea/Right"]
-offset_left = 144.0
-offset_right = 344.0
-offset_bottom = 32.0
-custom_minimum_size = Vector2( 200, 0 )
-theme_override_styles/panel = ExtResource( 24 )
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("24")
 
 [node name="ViewInfoLabel" type="Label" parent="MainWorkspace/HBX/VBX/TopArea/Right/ViewInfoPanel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_colors/font_color = Color( 1, 1, 1, 0.443137 )
-theme_override_fonts/font = ExtResource( 25 )
+theme_override_colors/font_color = Color(1, 1, 1, 0.443137)
+theme_override_fonts/font = ExtResource("25")
 text = "view info"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Minimuze" type="TextureButton" parent="MainWorkspace/HBX/VBX/TopArea/Right"]
-modulate = Color( 1, 1, 1, 0.490196 )
-offset_left = 358.0
-offset_right = 370.0
-offset_bottom = 32.0
-custom_minimum_size = Vector2( 12, 0 )
-texture_normal = ExtResource( 33 )
-expand = true
+modulate = Color(1, 1, 1, 0.490196)
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture_normal = ExtResource("33")
 stretch_mode = 5
-script = ExtResource( 11 )
+script = ExtResource("11")
 
 [node name="Maximize" type="TextureButton" parent="MainWorkspace/HBX/VBX/TopArea/Right"]
-modulate = Color( 1, 1, 1, 0.490196 )
-offset_left = 384.0
-offset_right = 396.0
-offset_bottom = 32.0
-custom_minimum_size = Vector2( 12, 0 )
+modulate = Color(1, 1, 1, 0.490196)
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource( 6 )
-expand = true
+texture_normal = ExtResource("6")
 stretch_mode = 5
-script = ExtResource( 11 )
+script = ExtResource("11")
 
 [node name="Exit" type="TextureButton" parent="MainWorkspace/HBX/VBX/TopArea/Right"]
-modulate = Color( 1, 1, 1, 0.490196 )
-offset_left = 410.0
-offset_right = 423.0
-offset_bottom = 32.0
-custom_minimum_size = Vector2( 13, 0 )
-texture_normal = ExtResource( 8 )
-expand = true
+modulate = Color(1, 1, 1, 0.490196)
+custom_minimum_size = Vector2(13, 0)
+layout_mode = 2
+texture_normal = ExtResource("8")
 stretch_mode = 5
-script = ExtResource( 11 )
-
-[node name="Tween" type="Tween" parent="MainWorkspace/HBX/VBX/TopArea"]
+script = ExtResource("11")
 
 [node name="Views" type="MarginContainer" parent="MainWorkspace/HBX/VBX"]
-offset_top = 45.0
-offset_right = 1050.0
-offset_bottom = 650.0
+layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource( 16 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("16")
 
-[node name="Dashboard" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource( 12 )]
+[node name="Dashboard" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource("12")]
 visible = false
-offset_right = 1050.0
-offset_bottom = 605.0
+layout_mode = 2
 title = "Mad Productivity"
 
-[node name="Notes" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource( 19 )]
+[node name="Notes" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource("19")]
 visible = false
-offset_right = 1050.0
-offset_bottom = 605.0
+layout_mode = 2
 title = "Notes"
 
-[node name="TimeTracking" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource( 14 )]
+[node name="TimeTracking" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource("14")]
 visible = false
-offset_right = 1050.0
-offset_bottom = 605.0
+layout_mode = 2
 title = "Time tracking"
 
-[node name="ToDo" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource( 22 )]
+[node name="ToDo" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource("22")]
 visible = false
-offset_right = 1050.0
-offset_bottom = 605.0
+layout_mode = 2
 title = "Todo"
 
-[node name="Game" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource( 13 )]
+[node name="Game" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource("13")]
 visible = false
+layout_mode = 2
 
 [node name="Profile" type="Control" parent="MainWorkspace/HBX/VBX/Views"]
 visible = false
-offset_right = 1050.0
-offset_bottom = 605.0
-script = ExtResource( 27 )
+layout_mode = 2
+script = ExtResource("27")
 title = "Profile"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainWorkspace/HBX/VBX/Views/Profile"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="UserName" type="LineEdit" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer"]
-offset_top = 256.0
-offset_right = 1050.0
-offset_bottom = 319.0
-theme_override_colors/font_color = Color( 0.854902, 0.423529, 0.384314, 1 )
-theme_override_fonts/font = ExtResource( 20 )
-theme_override_styles/read_only = SubResource( 17 )
-theme_override_styles/focus = SubResource( 18 )
-theme_override_styles/normal = SubResource( 19 )
+layout_mode = 2
+theme_override_colors/font_color = Color(0.854902, 0.423529, 0.384314, 1)
+theme_override_fonts/font = ExtResource("20")
+theme_override_styles/normal = SubResource("19")
+theme_override_styles/focus = SubResource("18")
+theme_override_styles/read_only = SubResource("17")
 text = "USER NAME"
-align = 1
 caret_blink = true
 
 [node name="UserTitle" type="LineEdit" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer"]
-offset_top = 323.0
-offset_right = 1050.0
-offset_bottom = 349.0
-theme_override_fonts/font = ExtResource( 23 )
-theme_override_styles/read_only = SubResource( 20 )
-theme_override_styles/focus = SubResource( 21 )
-theme_override_styles/normal = SubResource( 22 )
+layout_mode = 2
+theme_override_fonts/font = ExtResource("23")
+theme_override_styles/normal = SubResource("22")
+theme_override_styles/focus = SubResource("21")
+theme_override_styles/read_only = SubResource("20")
 text = "USER TITLE"
-align = 1
 caret_blink = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer"]
 visible = false
-offset_top = 97.0
-offset_right = 990.0
-offset_bottom = 571.0
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer"]
 visible = false
-offset_top = 474.0
-offset_right = 990.0
-offset_bottom = 571.0
-custom_minimum_size = Vector2( 0, 97 )
-theme_override_styles/panel = SubResource( 16 )
+custom_minimum_size = Vector2(0, 97)
+layout_mode = 2
+theme_override_styles/panel = SubResource("16")
 
 [node name="ColorRect" type="ColorRect" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_vertical = 0
-custom_minimum_size = Vector2( 0, 12 )
-color = Color( 0.0588235, 0.105882, 0.109804, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0.0588235, 0.105882, 0.109804, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer/Panel/ColorRect"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -12.0
 offset_right = -600.0
 grow_vertical = 0
-custom_minimum_size = Vector2( 0, 12 )
-color = Color( 0.854902, 0.423529, 0.384314, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0.854902, 0.423529, 0.384314, 1)
 
 [node name="Title" type="Label" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer/Panel"]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 12.0
 offset_right = 523.0
 offset_bottom = 75.0
-theme_override_colors/font_color = Color( 0.854902, 0.423529, 0.384314, 1 )
-theme_override_fonts/font = ExtResource( 20 )
+theme_override_colors/font_color = Color(0.854902, 0.423529, 0.384314, 1)
+theme_override_fonts/font = ExtResource("20")
 text = "Level: 1"
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Title2" type="Label" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer/Panel"]
+layout_mode = 0
 offset_left = 462.385
 offset_top = 12.0
 offset_right = 965.385
 offset_bottom = 75.0
-theme_override_colors/font_color = Color( 0.576471, 0.627451, 0.631373, 0.615686 )
-theme_override_fonts/font = ExtResource( 23 )
+theme_override_colors/font_color = Color(0.576471, 0.627451, 0.631373, 0.615686)
+theme_override_fonts/font = ExtResource("23")
 text = "23/1000pp"
-align = 2
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ColorRect2" type="ColorRect" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer/Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.737255 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0, 0, 0, 0.737255)
 
 [node name="Title3" type="Label" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer/Panel/ColorRect2"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -627,23 +487,15 @@ offset_left = -251.5
 offset_top = -31.5
 offset_right = 251.5
 offset_bottom = 31.5
-theme_override_colors/font_color = Color( 0.576471, 0.627451, 0.631373, 1 )
-theme_override_fonts/font = ExtResource( 20 )
+theme_override_colors/font_color = Color(0.576471, 0.627451, 0.631373, 1)
+theme_override_fonts/font = ExtResource("20")
 text = "TBD"
-align = 1
-valign = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Settings" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource( 36 )]
-offset_bottom = 605.0
-
-[node name="Tween" type="Tween" parent="."]
-
-[node name="Tween2" type="Tween" parent="."]
+[node name="Settings" parent="MainWorkspace/HBX/VBX/Views" instance=ExtResource("36")]
+layout_mode = 2
 
 [node name="ResizeBtn" type="TextureButton" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -653,16 +505,12 @@ offset_top = -25.0397
 offset_right = -4.72461
 offset_bottom = -5.03967
 action_mode = 0
-texture_normal = ExtResource( 17 )
-expand = true
+texture_normal = ExtResource("17")
 stretch_mode = 5
-script = ExtResource( 32 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("32")
 
 [node name="Shortcuts" type="Node" parent="."]
-script = ExtResource( 37 )
+script = ExtResource("37")
 
 [connection signal="view_changed" from="MainWorkspace/HBX/Sidebar" to="." method="_on_Sidebar_view_changed"]
 [connection signal="toggled" from="MainWorkspace/HBX/Sidebar/Buttons/TimeTrackPanel" to="MainWorkspace/HBX/Sidebar" method="_on_TimeTrackPanel_toggled"]

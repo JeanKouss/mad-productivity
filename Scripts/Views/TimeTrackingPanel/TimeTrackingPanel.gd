@@ -127,7 +127,7 @@ func start_time_tracking() -> void:
 	
 	curr_track_item = TimeTrackItem.new()
 	curr_track_item.create_track($Content/VBoxContainer/ItemInput.text)
-	curr_track_item.start_tracking(Time.get_unix_time_from_system())
+	curr_track_item.start_tracking(int(Time.get_unix_time_from_system()))
 	curr_track_item.type = state
 	
 	if progress_tweener :
@@ -177,7 +177,7 @@ func start_pomodoro_break() -> void:
 func stop_time_tracking(cancel : bool ) -> void:
 	if !cancel and state != STATES.POMODORO_BREAK:
 		# wrap up the time track officialy and send it off
-		curr_track_item.end_tracking(Time.get_unix_time_from_system())
+		curr_track_item.end_tracking(int(Time.get_unix_time_from_system()))
 		curr_track_item.type = state
 		emit_signal("register_time_track_item", curr_track_item)
 #		print(tracked_seconds)

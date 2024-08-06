@@ -1,52 +1,55 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://ddhmjv4ipwqql"]
 
-[ext_resource path="res://Assets/Fonts/Righteous-Regular.ttf" type="FontFile" id=1]
+[ext_resource type="FontFile" uid="uid://cc7ubmfm007ke" path="res://Assets/Fonts/Righteous-Regular.ttf" id="1"]
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id="3"]
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id="4"]
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 1, 1, 0.180392 )
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(1, 1, 1, 0.180392)
 draw_center = false
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.180392 )
+border_color = Color(1, 1, 1, 0.180392)
 
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 1, 1, 1, 0.180392 )
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(1, 1, 1, 0.180392)
 draw_center = false
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.180392 )
+border_color = Color(1, 1, 1, 0.180392)
 
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 1, 1, 1, 0.180392 )
+[sub_resource type="StyleBoxFlat" id="7"]
+bg_color = Color(1, 1, 1, 0.180392)
 draw_center = false
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color( 1, 1, 1, 0.180392 )
+border_color = Color(1, 1, 1, 0.180392)
 
-[sub_resource type="FontFile" id=2]
-size = 14
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [resource]
-default_font = SubResource( 2 )
-Button/colors/font_color = Color( 1, 1, 1, 0.180392 )
-Button/colors/font_color_focus = Color( 1, 1, 1, 0.180392 )
-Button/colors/font_color_hover = Color( 1, 1, 1, 0.180392 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 0.180392 )
-Button/styles/disabled = SubResource( 3 )
-Button/styles/focus = SubResource( 4 )
-Button/styles/hover = SubResource( 5 )
-Button/styles/normal = SubResource( 6 )
-Button/styles/pressed = SubResource( 7 )
+default_font = SubResource("2")
+Button/colors/font_color = Color(1, 1, 1, 0.180392)
+Button/colors/font_color_focus = Color(1, 1, 1, 0.180392)
+Button/colors/font_color_hover = Color(1, 1, 1, 0.180392)
+Button/colors/font_color_pressed = Color(1, 1, 1, 0.180392)
+Button/styles/disabled = SubResource("3")
+Button/styles/focus = SubResource("4")
+Button/styles/hover = SubResource("5")
+Button/styles/normal = SubResource("6")
+Button/styles/pressed = SubResource("7")

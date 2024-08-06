@@ -7,7 +7,7 @@ func _ready() -> void:
 	get_parent().size.x = 0.0
 
 
-func _on_Option_setting_color(which, node) -> void:
+func _on_Option_setting_color(_which, node) -> void:
 	color = node.color
 	emit_signal("show_colour_panel", true)
 

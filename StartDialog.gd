@@ -5,4 +5,4 @@ func _ready() -> void:
 		get_window().borderless = (false)
 	else:
 		get_window().borderless = (true)
-	get_tree().change_scene_to_file("res://Main.tscn")
+	get_tree().call_deferred('change_scene_to_file', "res://Main.tscn")

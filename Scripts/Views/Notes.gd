@@ -166,11 +166,11 @@ func _on_start_time_track(_name) -> void:
 	get_parent().start_custom_time_track(_name)
 
 
-func on_new_top_bar_button(message : Dictionary = {}) -> void:
+func on_new_top_bar_button(_message : Dictionary = {}) -> void:
 	add_button()
 
 
-func _on_note_btn_delete_clicked(btn : Button, res : NoteResource) -> void:
+func _on_note_btn_delete_clicked(_btn : Button, _res : NoteResource) -> void:
 	notes_no -= 1
 	update_view_text()
 	reset_state()

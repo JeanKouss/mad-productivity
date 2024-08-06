@@ -74,7 +74,6 @@ anchors_preset = 0
 offset_right = 990.0
 offset_bottom = 571.0
 script = ExtResource("10")
-title = null
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -160,16 +159,6 @@ mouse_filter = 1
 texture_normal = ExtResource("6")
 stretch_mode = 5
 script = ExtResource("5")
-
-[node name="Tween" type="Tween" parent="VBoxContainer/HSplitContainer/Panel/ScrollContainer/NoteButtons/DefaultButton"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="Panel2" type="Panel" parent="VBoxContainer/HSplitContainer"]
 layout_mode = 2

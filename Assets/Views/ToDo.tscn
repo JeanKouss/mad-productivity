@@ -1,65 +1,63 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=3 uid="uid://ccv0hgfro8dcu"]
 
-[ext_resource path="res://Assets/Themes/Dark/PanelGreenNoBorder.tres" type="StyleBox" id=1]
-[ext_resource path="res://Assets/Themes/Roboto12Clean.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/Themes/Dark/PanelSuperDarkGreen.tres" type="StyleBox" id=3]
-[ext_resource path="res://Scripts/Views/ToDo.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Views/Todos/TODOitem.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/Views/Todos/CustomCheckBox.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Buttons/TimeTrackBtnWhite.png" type="Texture2D" id=8]
-[ext_resource path="res://Scripts/Views/Todos/ProjectButton.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Fonts/Righteous20.tres" type="FontFile" id=10]
-[ext_resource path="res://Assets/Themes/LineEditCool.tres" type="Theme" id=11]
-[ext_resource path="res://Assets/Themes/CuteButtonTheme.tres" type="Theme" id=12]
-[ext_resource path="res://Assets/Themes/Dark/PanelHighlight.tres" type="StyleBox" id=13]
-[ext_resource path="res://Assets/Buttons/X_normal.png" type="Texture2D" id=15]
-[ext_resource path="res://Assets/Audio/notification2.wav" type="AudioStream" id=18]
-[ext_resource path="res://Assets/Textures/SimpleGradient.png" type="Texture2D" id=19]
-[ext_resource path="res://Scripts/CustomTransparentButton.gd" type="Script" id=20]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelGreenNoBorder.tres" id="1"]
+[ext_resource type="Theme" uid="uid://c5lr422jpugj7" path="res://Assets/Themes/Roboto12Clean.tres" id="2"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelSuperDarkGreen.tres" id="3"]
+[ext_resource type="Script" path="res://Scripts/Views/ToDo.gd" id="4"]
+[ext_resource type="Script" path="res://Scripts/Views/Todos/TODOitem.gd" id="5"]
+[ext_resource type="Script" path="res://Scripts/Views/Todos/CustomCheckBox.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://paige6pop8p2" path="res://Assets/Buttons/TimeTrackBtnWhite.png" id="8"]
+[ext_resource type="Script" path="res://Scripts/Views/Todos/ProjectButton.gd" id="9"]
+[ext_resource type="FontFile" path="res://Assets/Fonts/Righteous20.tres" id="10"]
+[ext_resource type="Theme" uid="uid://bre26fxkt815k" path="res://Assets/Themes/LineEditCool.tres" id="11"]
+[ext_resource type="Theme" uid="uid://18v18hamqe1f" path="res://Assets/Themes/CuteButtonTheme.tres" id="12"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelHighlight.tres" id="13"]
+[ext_resource type="Texture2D" uid="uid://blx2vowioew71" path="res://Assets/Buttons/X_normal.png" id="15"]
+[ext_resource type="AudioStream" uid="uid://bd1blyp22bw5" path="res://Assets/Audio/notification2.wav" id="18"]
+[ext_resource type="Texture2D" uid="uid://wyekgdjgv3d5" path="res://Assets/Textures/SimpleGradient.png" id="19"]
+[ext_resource type="Script" path="res://Scripts/CustomTransparentButton.gd" id="20"]
 
-[sub_resource type="StyleBoxEmpty" id=20]
+[sub_resource type="StyleBoxEmpty" id="20"]
 
-[sub_resource type="ButtonGroup" id=21]
-
-[sub_resource type="StyleBoxFlat" id=22]
-bg_color = Color( 0.576471, 0.627451, 0.631373, 1 )
+[sub_resource type="StyleBoxFlat" id="22"]
+bg_color = Color(0.576471, 0.627451, 0.631373, 1)
 draw_center = false
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id="6"]
 
-[sub_resource type="StyleBoxEmpty" id=23]
+[sub_resource type="StyleBoxEmpty" id="23"]
 
-[sub_resource type="StyleBoxEmpty" id=24]
+[sub_resource type="StyleBoxEmpty" id="24"]
 
-[sub_resource type="StyleBoxEmpty" id=25]
+[sub_resource type="StyleBoxEmpty" id="25"]
 
-[sub_resource type="Theme" id=26]
-TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
-TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
-TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
-TextEdit/colors/breakpoint_color = Color( 0.8, 0.8, 0.4, 0.2 )
-TextEdit/colors/caret_background_color = Color( 0, 0, 0, 1 )
-TextEdit/colors/caret_color = Color( 0.854902, 0.423529, 0.384314, 1 )
-TextEdit/colors/code_folding_color = Color( 0.8, 0.8, 0.8, 0.8 )
-TextEdit/colors/completion_background_color = Color( 0.17, 0.16, 0.2, 1 )
-TextEdit/colors/completion_existing_color = Color( 0.87, 0.87, 0.87, 0.13 )
-TextEdit/colors/completion_font_color = Color( 0.67, 0.67, 0.67, 1 )
-TextEdit/colors/completion_scroll_color = Color( 1, 1, 1, 1 )
-TextEdit/colors/completion_selected_color = Color( 0.26, 0.26, 0.27, 1 )
-TextEdit/colors/current_line_color = Color( 0.25, 0.25, 0.26, 0.8 )
-TextEdit/colors/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
-TextEdit/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-TextEdit/colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 0.5 )
-TextEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
-TextEdit/colors/function_color = Color( 0.4, 0.64, 0.81, 1 )
-TextEdit/colors/line_number_color = Color( 0.67, 0.67, 0.67, 0.4 )
-TextEdit/colors/mark_color = Color( 1, 0.4, 0.4, 0.4 )
-TextEdit/colors/member_variable_color = Color( 0.9, 0.31, 0.35, 1 )
-TextEdit/colors/number_color = Color( 0.92, 0.58, 0.2, 1 )
-TextEdit/colors/safe_line_number_color = Color( 0.67, 0.78, 0.67, 0.6 )
-TextEdit/colors/selection_color = Color( 0.49, 0.49, 0.49, 1 )
-TextEdit/colors/symbol_color = Color( 0.94, 0.94, 0.94, 1 )
-TextEdit/colors/word_highlighted_color = Color( 0.8, 0.9, 0.9, 0.15 )
+[sub_resource type="Theme" id="26"]
+TextEdit/colors/background_color = Color(0, 0, 0, 0)
+TextEdit/colors/bookmark_color = Color(0.08, 0.49, 0.98, 1)
+TextEdit/colors/brace_mismatch_color = Color(1, 0.2, 0.2, 1)
+TextEdit/colors/breakpoint_color = Color(0.8, 0.8, 0.4, 0.2)
+TextEdit/colors/caret_background_color = Color(0, 0, 0, 1)
+TextEdit/colors/caret_color = Color(0.854902, 0.423529, 0.384314, 1)
+TextEdit/colors/code_folding_color = Color(0.8, 0.8, 0.8, 0.8)
+TextEdit/colors/completion_background_color = Color(0.17, 0.16, 0.2, 1)
+TextEdit/colors/completion_existing_color = Color(0.87, 0.87, 0.87, 0.13)
+TextEdit/colors/completion_font_color = Color(0.67, 0.67, 0.67, 1)
+TextEdit/colors/completion_scroll_color = Color(1, 1, 1, 1)
+TextEdit/colors/completion_selected_color = Color(0.26, 0.26, 0.27, 1)
+TextEdit/colors/current_line_color = Color(0.25, 0.25, 0.26, 0.8)
+TextEdit/colors/executing_line_color = Color(0.2, 0.8, 0.2, 0.4)
+TextEdit/colors/font_color = Color(0.88, 0.88, 0.88, 1)
+TextEdit/colors/font_color_readonly = Color(0.88, 0.88, 0.88, 0.5)
+TextEdit/colors/font_color_selected = Color(0, 0, 0, 1)
+TextEdit/colors/function_color = Color(0.4, 0.64, 0.81, 1)
+TextEdit/colors/line_number_color = Color(0.67, 0.67, 0.67, 0.4)
+TextEdit/colors/mark_color = Color(1, 0.4, 0.4, 0.4)
+TextEdit/colors/member_variable_color = Color(0.9, 0.31, 0.35, 1)
+TextEdit/colors/number_color = Color(0.92, 0.58, 0.2, 1)
+TextEdit/colors/safe_line_number_color = Color(0.67, 0.78, 0.67, 0.6)
+TextEdit/colors/selection_color = Color(0.49, 0.49, 0.49, 1)
+TextEdit/colors/symbol_color = Color(0.94, 0.94, 0.94, 1)
+TextEdit/colors/word_highlighted_color = Color(0.8, 0.9, 0.9, 0.15)
 TextEdit/constants/completion_lines = 7
 TextEdit/constants/completion_max_width = 50
 TextEdit/constants/completion_scroll_width = 3
@@ -69,90 +67,78 @@ TextEdit/icons/fold = null
 TextEdit/icons/folded = null
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
-TextEdit/styles/completion = SubResource( 6 )
-TextEdit/styles/focus = SubResource( 23 )
-TextEdit/styles/normal = SubResource( 24 )
-TextEdit/styles/read_only = SubResource( 25 )
+TextEdit/styles/completion = SubResource("6")
+TextEdit/styles/focus = SubResource("23")
+TextEdit/styles/normal = SubResource("24")
+TextEdit/styles/read_only = SubResource("25")
 
-[sub_resource type="StyleBoxEmpty" id=27]
+[sub_resource type="StyleBoxEmpty" id="27"]
 
-[sub_resource type="StyleBoxEmpty" id=12]
+[sub_resource type="StyleBoxEmpty" id="14"]
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id="13"]
 
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id="12"]
 
 [node name="ToDo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 990.0
 offset_bottom = 571.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 2 )
+theme = ExtResource("2")
 theme_override_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
-offset_right = 990.0
-offset_bottom = 571.0
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource( 2 )
-theme_override_constants/autohide = 0
+theme = ExtResource("2")
 theme_override_constants/separation = 35
+theme_override_constants/autohide = 0
 split_offset = 243
 
 [node name="PanelL" type="Panel" parent="VBoxContainer/HSplitContainer"]
-self_modulate = Color( 1, 1, 1, 0.686275 )
-offset_right = 243.0
-offset_bottom = 571.0
+self_modulate = Color(1, 1, 1, 0.686275)
 clip_contents = true
-theme_override_styles/panel = ExtResource( 3 )
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HSplitContainer/PanelL"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 13.0
 offset_top = 14.0
 offset_right = -13.0
 offset_bottom = -14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ProjectButtons" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer"]
-offset_right = 207.0
-offset_bottom = 543.0
-custom_minimum_size = Vector2( 200, 440 )
+custom_minimum_size = Vector2(200, 440)
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 2 )
+theme = ExtResource("2")
 theme_override_constants/separation = 20
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ProjectButton" type="Button" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons"]
 visible = false
-offset_right = 207.0
-offset_bottom = 25.0
-theme_override_colors/font_color = Color( 0.623529, 0.623529, 0.623529, 0.352941 )
-theme_override_colors/font_pressed_color = Color( 0.627451, 0.627451, 0.627451, 1 )
-theme_override_styles/focus = SubResource( 20 )
+layout_mode = 2
+theme_override_colors/font_color = Color(0.623529, 0.623529, 0.623529, 0.352941)
+theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_styles/focus = SubResource("20")
 toggle_mode = true
-group = SubResource( 21 )
 text = "TODO PROJECT"
 flat = true
-align = 0
-script = ExtResource( 9 )
+script = ExtResource("9")
 
 [node name="TimeTrack" type="TextureButton" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -161,20 +147,17 @@ offset_left = -38.9155
 offset_top = -16.7895
 offset_right = -18.9155
 offset_bottom = 17.2105
-custom_minimum_size = Vector2( 19, 0 )
-pivot_offset = Vector2( 9.5, 9.5 )
+pivot_offset = Vector2(9.5, 9.5)
+size_flags_horizontal = 9
 tooltip_text = "Time track"
 mouse_filter = 1
-size_flags_horizontal = 9
-texture_normal = ExtResource( 8 )
-expand = true
+texture_normal = ExtResource("8")
 stretch_mode = 5
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("20")
 
 [node name="DeleteBtn" type="TextureButton" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -183,86 +166,71 @@ offset_left = -19.0
 offset_top = -19.5
 offset_right = 1.0
 offset_bottom = 20.5
-custom_minimum_size = Vector2( 20, 0 )
-pivot_offset = Vector2( 10, 20 )
+pivot_offset = Vector2(10, 20)
 focus_mode = 0
 mouse_filter = 1
-focus_mode = 0
-texture_normal = ExtResource( 15 )
-expand = true
+texture_normal = ExtResource("15")
 stretch_mode = 5
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
+script = ExtResource("20")
 
 [node name="CompleteBG" type="Panel" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 7.0
 offset_top = 4.0
 offset_bottom = 7.0
-theme_override_styles/panel = ExtResource( 3 )
+theme_override_styles/panel = ExtResource("3")
 
 [node name="CompleteBar" type="Panel" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton/CompleteBG"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme_override_styles/panel = ExtResource( 13 )
+theme_override_styles/panel = ExtResource("13")
 
 [node name="CompleteSound" type="AudioStreamPlayer" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
-stream = ExtResource( 18 )
+stream = ExtResource("18")
 
 [node name="PanelR" type="Panel" parent="VBoxContainer/HSplitContainer"]
-offset_left = 278.0
-offset_right = 990.0
-offset_bottom = 571.0
 clip_contents = true
-theme_override_styles/panel = SubResource( 22 )
+layout_mode = 2
+theme_override_styles/panel = SubResource("22")
 
 [node name="TaskScroll" type="ScrollContainer" parent="VBoxContainer/HSplitContainer/PanelR"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 15.0
 offset_right = -15.0
 offset_bottom = -15.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TaskList" type="VBoxContainer" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll"]
-offset_right = 687.0
-offset_bottom = 541.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 26 )
+theme = SubResource("26")
 theme_override_constants/separation = 15
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ProjectLineEdit" type="LineEdit" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList"]
 visible = false
-offset_right = 687.0
-offset_bottom = 26.0
-theme = ExtResource( 11 )
-theme_override_colors/font_color = Color( 0.623529, 0.623529, 0.623529, 1 )
-theme_override_fonts/font = ExtResource( 10 )
-theme_override_styles/normal = SubResource( 27 )
+layout_mode = 2
+theme = ExtResource("11")
+theme_override_colors/font_color = Color(0.623529, 0.623529, 0.623529, 1)
+theme_override_fonts/font = ExtResource("10")
+theme_override_styles/normal = SubResource("27")
 text = "Project_name"
 
 [node name="TODOitem" type="Panel" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList"]
-offset_right = 687.0
-offset_bottom = 37.5
-custom_minimum_size = Vector2( 0, 37.5 )
-pivot_offset = Vector2( -261.834, -35 )
 clip_contents = true
-theme_override_styles/panel = ExtResource( 1 )
-script = ExtResource( 5 )
+custom_minimum_size = Vector2(0, 37.5)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1")
+script = ExtResource("5")
 
 [node name="DeleteBtn" type="TextureButton" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -271,20 +239,16 @@ offset_left = -30.0
 offset_top = -19.75
 offset_right = -8.0
 offset_bottom = 20.25
-custom_minimum_size = Vector2( 20, 0 )
-pivot_offset = Vector2( 10, 20 )
+pivot_offset = Vector2(10, 20)
 focus_mode = 0
 mouse_filter = 1
-focus_mode = 0
-texture_normal = ExtResource( 15 )
-expand = true
+texture_normal = ExtResource("15")
 stretch_mode = 5
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("20")
 
 [node name="TimeTrack" type="TextureButton" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem"]
+custom_minimum_size = Vector2(19, 0)
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -293,95 +257,73 @@ offset_left = -58.7401
 offset_top = -18.75
 offset_right = -36.7401
 offset_bottom = 19.25
-custom_minimum_size = Vector2( 19, 0 )
-pivot_offset = Vector2( 9.5, 9.5 )
+pivot_offset = Vector2(9.5, 9.5)
+size_flags_horizontal = 9
 tooltip_text = "Time track"
 mouse_filter = 1
-size_flags_horizontal = 9
-texture_normal = ExtResource( 8 )
-expand = true
+texture_normal = ExtResource("8")
 stretch_mode = 5
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("20")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -57.0
 offset_bottom = 0.5
 mouse_filter = 2
 theme_override_constants/separation = 10
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CheckBox" type="Panel" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer"]
-offset_right = 38.0
-offset_bottom = 38.0
-custom_minimum_size = Vector2( 38, 0 )
+custom_minimum_size = Vector2(38, 0)
+layout_mode = 2
 mouse_filter = 1
-theme_override_styles/panel = ExtResource( 3 )
-script = ExtResource( 6 )
+theme_override_styles/panel = ExtResource("3")
+script = ExtResource("6")
 
 [node name="ColorRect" type="ColorRect" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer/CheckBox"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = -4.0
 offset_bottom = -4.0
-pivot_offset = Vector2( 15, 15 )
+pivot_offset = Vector2(15, 15)
 mouse_filter = 2
-color = Color( 1, 1, 1, 0.0588235 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(1, 1, 1, 0.0588235)
 
 [node name="CheckBox2" type="Panel" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer/CheckBox"]
 visible = false
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 9.0
 offset_top = 9.0
 offset_right = -8.0
 offset_bottom = -8.0
-pivot_offset = Vector2( 10, 10 )
+pivot_offset = Vector2(10, 10)
 mouse_filter = 1
-theme_override_styles/panel = ExtResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer/CheckBox"]
+theme_override_styles/panel = ExtResource("13")
 
 [node name="Task" type="LineEdit" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer"]
-offset_left = 48.0
-offset_right = 120.0
-offset_bottom = 38.0
+layout_mode = 2
 mouse_filter = 1
-theme_override_colors/font_color = Color( 0.631373, 0.631373, 0.631373, 1 )
-theme_override_styles/read_only = SubResource( 12 )
-theme_override_styles/focus = SubResource( 13 )
-theme_override_styles/normal = SubResource( 14 )
+theme_override_colors/font_color = Color(0.631373, 0.631373, 0.631373, 1)
+theme_override_styles/normal = SubResource("14")
+theme_override_styles/focus = SubResource("13")
+theme_override_styles/read_only = SubResource("12")
 text = "Task"
 expand_to_text_length = true
 
 [node name="Date" type="Label" parent="VBoxContainer/HSplitContainer/PanelR/TaskScroll/TaskList/TODOitem/HBoxContainer"]
-offset_left = 130.0
-offset_top = 9.0
-offset_right = 281.0
-offset_bottom = 28.0
-theme_override_colors/font_color = Color( 0.576471, 0.627451, 0.631373, 0.439216 )
+layout_mode = 2
+theme_override_colors/font_color = Color(0.576471, 0.627451, 0.631373, 0.439216)
 text = "21/5/2021 8:45:32"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Gradient" type="TextureRect" parent="VBoxContainer/HSplitContainer/PanelR"]
-modulate = Color( 0.156863, 0.156863, 0.156863, 1 )
+modulate = Color(0.156863, 0.156863, 0.156863, 1)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -389,42 +331,35 @@ offset_left = -81.0
 offset_top = -158.0
 offset_right = 81.0
 mouse_filter = 2
-texture = ExtResource( 19 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture = ExtResource("19")
+expand_mode = 1
 
 [node name="NewTodoBtn" type="Button" parent="VBoxContainer/HSplitContainer/PanelR"]
+custom_minimum_size = Vector2(38, 30)
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -134.0
 offset_top = 15.0
 offset_right = -25.0
 offset_bottom = 45.0
-custom_minimum_size = Vector2( 38, 30 )
 size_flags_horizontal = 0
-theme = ExtResource( 12 )
+theme = ExtResource("12")
 text = "New task"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Debug" type="Button" parent="VBoxContainer/HSplitContainer/PanelR"]
 visible = false
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 141.581
 offset_top = -61.7841
 offset_right = 250.581
 offset_bottom = -23.7841
-custom_minimum_size = Vector2( 38, 38 )
 size_flags_horizontal = 0
-theme = ExtResource( 12 )
+theme = ExtResource("12")
 text = "Check data"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="gui_input" from="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton" to="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton" method="_on_ProjectButton_gui_input"]
 [connection signal="selected_project" from="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton" to="." method="_on_ProjectButton_selected_project"]

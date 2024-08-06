@@ -667,16 +667,6 @@ grow_horizontal = 0
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("9")
 
-[node name="Tween" type="Tween" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
-
 [connection signal="values_updated" from="HBX/C/VBoxContainer/CatTheme" to="HBX/C/VBoxContainer/Primary/Option" method="_on_CatTheme_values_updated"]
 [connection signal="values_updated" from="HBX/C/VBoxContainer/CatTheme" to="HBX/C/VBoxContainer/Contrast" method="_on_CatTheme_values_updated"]
 [connection signal="pressed" from="HBX/C/VBoxContainer/CatTheme/TheneResetButton" to="." method="_on_TheneResetButton_pressed"]

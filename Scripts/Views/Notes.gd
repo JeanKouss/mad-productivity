@@ -98,7 +98,6 @@ func update_text_edit() -> void:
 	te.draw_spaces = res.draw_spaces
 	te.highlight_all_occurrences = res.highlight_all_occurances
 	te.syntax_highlighter = SyntaxHighlighter.new() if res.syntax_highlighting else null
-	te.show_line_numbers = res.line_numbers
 
 
 func add_button_from_resource(res : NoteResource) -> void:

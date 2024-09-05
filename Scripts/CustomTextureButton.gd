@@ -7,17 +7,17 @@ signal toggled_menu_btn
 
 
 func _ready() -> void:
-	connect("mouse_entered", Callable(self, "mouse_entered"))
-	connect("mouse_exited", Callable(self, "mouse_exited"))
-	connect("toggled", Callable(self, "btn_toggled"))
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	toggled.connect(_on_btn_toggled)
 	
 	
-func mouse_entered() -> void:
+func _on_mouse_entered() -> void:
 	modulate = Defaults.btn_active_colour
 
 
-func mouse_exited() -> void:
-	if pressed: return
+func _on_mouse_exited() -> void:
+	if button_pressed : return
 	modulate = Defaults.btn_inactive_colour
 
 
@@ -25,9 +25,9 @@ func deactivate() -> void:
 	modulate = Defaults.btn_inactive_colour
 
 
-func btn_toggled(btn_pressed : bool) -> void:
+func _on_btn_toggled(btn_pressed : bool) -> void:
 	if btn_pressed:
 		modulate = Defaults.btn_active_colour
-		emit_signal("toggled_menu_btn")
+		toggled_menu_btn.emit()
 	else:
 		modulate = Defaults.btn_inactive_colour

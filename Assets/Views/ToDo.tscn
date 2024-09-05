@@ -74,11 +74,11 @@ TextEdit/styles/read_only = SubResource("25")
 
 [sub_resource type="StyleBoxEmpty" id="27"]
 
-[sub_resource type="StyleBoxEmpty" id="14"]
-
 [sub_resource type="StyleBoxEmpty" id="13"]
 
 [sub_resource type="StyleBoxEmpty" id="12"]
+
+[sub_resource type="StyleBoxEmpty" id="14"]
 
 [node name="ToDo" type="Control"]
 layout_mode = 3
@@ -126,14 +126,14 @@ theme = ExtResource("2")
 theme_override_constants/separation = 20
 
 [node name="ProjectButton" type="Button" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons"]
-visible = false
 layout_mode = 2
-theme_override_colors/font_color = Color(0.623529, 0.623529, 0.623529, 0.352941)
 theme_override_colors/font_pressed_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_colors/font_color = Color(0.623529, 0.623529, 0.623529, 0.352941)
 theme_override_styles/focus = SubResource("20")
 toggle_mode = true
 text = "TODO PROJECT"
 flat = true
+alignment = 0
 script = ExtResource("9")
 
 [node name="TimeTrack" type="TextureButton" parent="VBoxContainer/HSplitContainer/PanelL/ScrollContainer/ProjectButtons/ProjectButton"]
@@ -152,6 +152,7 @@ size_flags_horizontal = 9
 tooltip_text = "Time track"
 mouse_filter = 1
 texture_normal = ExtResource("8")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("20")
 
@@ -170,6 +171,7 @@ pivot_offset = Vector2(10, 20)
 focus_mode = 0
 mouse_filter = 1
 texture_normal = ExtResource("15")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("20")
 
@@ -310,9 +312,9 @@ theme_override_styles/panel = ExtResource("13")
 layout_mode = 2
 mouse_filter = 1
 theme_override_colors/font_color = Color(0.631373, 0.631373, 0.631373, 1)
-theme_override_styles/normal = SubResource("14")
 theme_override_styles/focus = SubResource("13")
 theme_override_styles/read_only = SubResource("12")
+theme_override_styles/normal = SubResource("14")
 text = "Task"
 expand_to_text_length = true
 

@@ -53,17 +53,17 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="StyleBoxEmpty" id="19"]
-
 [sub_resource type="StyleBoxEmpty" id="18"]
 
 [sub_resource type="StyleBoxEmpty" id="17"]
 
-[sub_resource type="StyleBoxEmpty" id="22"]
+[sub_resource type="StyleBoxEmpty" id="19"]
 
 [sub_resource type="StyleBoxEmpty" id="21"]
 
 [sub_resource type="StyleBoxEmpty" id="20"]
+
+[sub_resource type="StyleBoxEmpty" id="22"]
 
 [sub_resource type="StyleBoxFlat" id="16"]
 bg_color = Color(0.0862745, 0.152941, 0.160784, 1)
@@ -96,17 +96,22 @@ theme_override_styles/panel = ExtResource("44")
 script = ExtResource("5")
 
 [node name="Buttons" type="VBoxContainer" parent="MainWorkspace/HBX/Sidebar"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
 [node name="TimeTrackPanel" type="TextureButton" parent="MainWorkspace/HBX/Sidebar/Buttons"]
 custom_minimum_size = Vector2(23, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("3")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("11")
 
@@ -122,6 +127,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("1")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "Dashboard"
@@ -134,6 +140,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("2")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "Notes"
@@ -146,6 +153,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("3")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "TimeTracking"
@@ -158,6 +166,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("4")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "ToDo"
@@ -170,6 +179,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("46")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "Game"
@@ -186,6 +196,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("18")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "Profile"
@@ -199,6 +210,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 toggle_mode = true
 texture_normal = ExtResource("34")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("9")
 target = "Settings"
@@ -340,6 +352,7 @@ modulate = Color(1, 1, 1, 0.490196)
 custom_minimum_size = Vector2(12, 0)
 layout_mode = 2
 texture_normal = ExtResource("33")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("11")
 
@@ -349,6 +362,7 @@ custom_minimum_size = Vector2(12, 0)
 layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("6")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("11")
 
@@ -357,6 +371,7 @@ modulate = Color(1, 1, 1, 0.490196)
 custom_minimum_size = Vector2(13, 0)
 layout_mode = 2
 texture_normal = ExtResource("8")
+ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("11")
 
@@ -405,18 +420,18 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.854902, 0.423529, 0.384314, 1)
 theme_override_fonts/font = ExtResource("20")
-theme_override_styles/normal = SubResource("19")
 theme_override_styles/focus = SubResource("18")
 theme_override_styles/read_only = SubResource("17")
+theme_override_styles/normal = SubResource("19")
 text = "USER NAME"
 caret_blink = true
 
 [node name="UserTitle" type="LineEdit" parent="MainWorkspace/HBX/VBX/Views/Profile/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("23")
-theme_override_styles/normal = SubResource("22")
 theme_override_styles/focus = SubResource("21")
 theme_override_styles/read_only = SubResource("20")
+theme_override_styles/normal = SubResource("22")
 text = "USER TITLE"
 caret_blink = true
 

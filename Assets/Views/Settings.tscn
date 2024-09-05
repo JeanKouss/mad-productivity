@@ -70,6 +70,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
 theme_override_fonts/font = ExtResource("3")
 theme_override_styles/normal = SubResource("22")
 text = "Theme"
+vertical_alignment = 1
 
 [node name="TheneResetButton" type="Button" parent="HBX/C/VBoxContainer/CatTheme"]
 custom_minimum_size = Vector2(60, 30)
@@ -88,6 +89,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Primary color"
+vertical_alignment = 1
 
 [node name="Option" type="ColorRect" parent="HBX/C/VBoxContainer/Primary"]
 custom_minimum_size = Vector2(17, 0)
@@ -123,6 +125,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Highlight color"
+vertical_alignment = 1
 
 [node name="Option" type="ColorRect" parent="HBX/C/VBoxContainer/Highlight"]
 custom_minimum_size = Vector2(17, 0)
@@ -159,6 +162,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Contrast"
+vertical_alignment = 1
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/Contrast"]
 custom_minimum_size = Vector2(63.425, 0)
@@ -178,6 +182,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Text Color"
+vertical_alignment = 1
 
 [node name="Option" type="ColorRect" parent="HBX/C/VBoxContainer/TextColour"]
 custom_minimum_size = Vector2(17, 0)
@@ -214,6 +219,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
 theme_override_fonts/font = ExtResource("3")
 theme_override_styles/normal = SubResource("22")
 text = "General"
+vertical_alignment = 1
 
 [node name="GeneralResetButton" type="Button" parent="HBX/C/VBoxContainer/Category3"]
 custom_minimum_size = Vector2(60, 30)
@@ -232,6 +238,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Show seconds in dashboard"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/SecsDashboard"]
 layout_mode = 2
@@ -247,6 +254,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "24 hour time format"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/TimeFormatDashboard"]
 layout_mode = 2
@@ -262,6 +270,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Font size (notes)"
+vertical_alignment = 1
 
 [node name="Option" type="OptionButton" parent="HBX/C/VBoxContainer/FontSize"]
 custom_minimum_size = Vector2(80, 0)
@@ -278,6 +287,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Particle effect"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/ParticleEffect"]
 layout_mode = 2
@@ -293,6 +303,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Remember window size and position"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/WindowPos"]
 layout_mode = 2
@@ -308,6 +319,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Remember last session view"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/WindowPos2"]
 layout_mode = 2
@@ -323,6 +335,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Show date in Dashboard"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/ShowDate"]
 layout_mode = 2
@@ -338,6 +351,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Borderless window"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Borderless"]
 layout_mode = 2
@@ -353,6 +367,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "HiDPI"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/HidDPI"]
 layout_mode = 2
@@ -369,6 +384,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
 theme_override_fonts/font = ExtResource("3")
 theme_override_styles/normal = SubResource("22")
 text = "Pomodoro"
+vertical_alignment = 1
 
 [node name="PomodoroResetButton" type="Button" parent="HBX/C/VBoxContainer/Category2"]
 custom_minimum_size = Vector2(60, 30)
@@ -387,6 +403,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Work time length"
+vertical_alignment = 1
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/WorkTimeLength"]
 custom_minimum_size = Vector2(60, 0)
@@ -404,6 +421,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Short pause length"
+vertical_alignment = 1
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/ShortPause"]
 custom_minimum_size = Vector2(60, 0)
@@ -421,6 +439,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Long pause length"
+vertical_alignment = 1
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/LongPause"]
 custom_minimum_size = Vector2(60, 0)
@@ -438,6 +457,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Long pause frequency (after how many short breaks)"
+vertical_alignment = 1
 
 [node name="Option" type="SpinBox" parent="HBX/C/VBoxContainer/LongPauseFreq"]
 custom_minimum_size = Vector2(60, 0)
@@ -456,6 +476,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
 theme_override_fonts/font = ExtResource("3")
 theme_override_styles/normal = SubResource("22")
 text = "Notes"
+vertical_alignment = 1
 
 [node name="NotesResetButton" type="Button" parent="HBX/C/VBoxContainer/NotesCategory"]
 custom_minimum_size = Vector2(60, 30)
@@ -474,6 +495,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Show line numbers"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/LineNumbers"]
 layout_mode = 2
@@ -489,6 +511,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Highlight current line"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/HighlightLine"]
 layout_mode = 2
@@ -504,6 +527,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Show minimap"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Minimap"]
 layout_mode = 2
@@ -519,6 +543,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Syntax highlighting"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/SyntaxHighlighting"]
 layout_mode = 2
@@ -534,6 +559,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Draw tabs"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/TabBar"]
 layout_mode = 2
@@ -549,6 +575,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Draw spaces"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Spaces"]
 layout_mode = 2
@@ -564,6 +591,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.611765)
 theme_override_fonts/font = ExtResource("2")
 theme_override_styles/normal = SubResource("22")
 text = "Highlight all occurances"
+vertical_alignment = 1
 
 [node name="Option" type="CheckBox" parent="HBX/C/VBoxContainer/Occurances"]
 layout_mode = 2
@@ -580,6 +608,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.862745)
 theme_override_fonts/font = ExtResource("3")
 theme_override_styles/normal = SubResource("22")
 text = "Quotes"
+vertical_alignment = 1
 
 [node name="QuotesSaveButton" type="Button" parent="HBX/C/VBoxContainer/QuotesCategory"]
 custom_minimum_size = Vector2(60, 30)
@@ -605,6 +634,7 @@ theme_override_constants/separation = 20
 visible = false
 layout_mode = 2
 text = "1"
+vertical_alignment = 1
 
 [node name="Delete" type="TextureButton" parent="HBX/C/VBoxContainer/QuoteBox"]
 modulate = Color(1, 1, 1, 0.576471)

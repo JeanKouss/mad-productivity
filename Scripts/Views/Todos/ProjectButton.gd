@@ -9,8 +9,8 @@ var finished : bool = false
 var tweener : Tween
 
 func _ready() -> void:
-	connect("mouse_entered", Callable(self, "on_mouse_entered"))
-	connect("mouse_exited", Callable(self, "on_mouse_exited"))
+	mouse_entered.connect(on_mouse_entered)
+	mouse_exited.connect(on_mouse_exited)
 	on_mouse_exited()
 	update_theme()
 	
@@ -32,11 +32,11 @@ func on_mouse_exited() -> void:
 
 func _on_ProjectButton_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == 1:
-		emit_signal("selected_project", text, id, get_index())
+		selected_project.emit(text, id, get_index())
 
 
 func _on_DeleteBtn_pressed() -> void:
-	emit_signal("delete_project", id)
+	delete_project.emit(id)
 	queue_free()
 
 func set_percent_done(perc : float = 0.0) -> void:

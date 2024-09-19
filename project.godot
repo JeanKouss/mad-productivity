@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="MadProductivity"
-run/main_scene="res://StartDialog.tscn"
 config/auto_accept_quit=false
 config/features=PackedStringArray("4.3")
 run/low_processor_mode=true
@@ -21,10 +20,6 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
-
-[autoload]
-
-Defaults="*res://Defaults.tscn"
 
 [display]
 
@@ -88,7 +83,6 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.345098, 0.345098, 0.345098, 1)
-environment/defaults/default_environment="res://default_env.tres"
 quality/driver/driver_name="GLES2"
 quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1

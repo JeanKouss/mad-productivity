@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8wp2a63mdlcm"]
+
+[ext_resource type="Texture2D" uid="uid://paige6pop8p2" path="res://Assets/Buttons/TimeTrackBtnWhite.png" id="1_rgyal"]
+[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelDarkGreen.tres" id="1_rvnel"]
+[ext_resource type="Texture2D" uid="uid://cagxfysnenkwc" path="res://Assets/Icons/MD_concept.png" id="2_q75nu"]
+[ext_resource type="Texture2D" uid="uid://dfsle7iw1ehmk" path="res://Assets/Icons/NoteTaking.png" id="3_qojab"]
+[ext_resource type="Texture2D" uid="uid://cnjgxgadqpqge" path="res://Assets/Icons/TimeTracking.png" id="4_pr60g"]
+[ext_resource type="Texture2D" uid="uid://dv38s6epnc64t" path="res://Assets/Icons/ToDo.png" id="5_2e4px"]
+[ext_resource type="Texture2D" uid="uid://dwb4j2rebc16e" path="res://Assets/Icons/gamepad.png" id="6_krgdy"]
+[ext_resource type="Texture2D" uid="uid://bdwia3cfenhns" path="res://Assets/Icons/Profile.png" id="7_d4x38"]
+[ext_resource type="Texture2D" uid="uid://had50fou2noj" path="res://Assets/Icons/Settings.png" id="8_840gu"]
+
+[node name="Sidebar" type="Panel"]
+custom_minimum_size = Vector2(50, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 50.0
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_rvnel")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TopButtons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="TimeTrackButton" type="TextureButton" parent="MarginContainer/TopButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("1_rgyal")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CenterButtons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="HomeButton" type="TextureButton" parent="MarginContainer/CenterButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("2_q75nu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NotesButton" type="TextureButton" parent="MarginContainer/CenterButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("3_qojab")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TimeTrakingManagementButton" type="TextureButton" parent="MarginContainer/CenterButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("4_pr60g")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TodoButton" type="TextureButton" parent="MarginContainer/CenterButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("5_2e4px")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="GamesButtons" type="TextureButton" parent="MarginContainer/CenterButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("6_krgdy")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BottomButtons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 30
+
+[node name="ProfileButton" type="TextureButton" parent="MarginContainer/BottomButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("7_d4x38")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SettingsButton" type="TextureButton" parent="MarginContainer/BottomButtons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture_normal = ExtResource("8_840gu")
+ignore_texture_size = true
+stretch_mode = 5

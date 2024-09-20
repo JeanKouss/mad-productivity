@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://bre26fxkt815k"]
 
 [ext_resource type="FontFile" path="res://Assets/Fonts/Roboto12.tres" id="1"]
-[ext_resource type="StyleBox" path="res://Assets/Themes/Dark/PanelGreenNoBorder.tres" id="2"]
+[ext_resource type="StyleBox" uid="uid://b7g8wq4wm0f0m" path="res://Assets/Themes/Dark/PanelGreenNoBorder.tres" id="2"]
 
 [sub_resource type="StyleBoxEmpty" id="1"]
 content_margin_left = 12.0

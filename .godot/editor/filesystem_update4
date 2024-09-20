@@ -1,5 +1,5 @@
 res://Main.tscn
 res://Components/Sidebar/Sidebar.tscn
-res://Assets/Themes/Dark/PanelSuperDarkGreen.tres
-res://Assets/Themes/Dark/PanelGreenNoBorder.tres
-res://Assets/Themes/Resources/DarkGrey.tres
+res://Components/Sidebar/SidebarButton.gd
+res://Components/Sidebar/Sidebar.gd
+res://Main.gd

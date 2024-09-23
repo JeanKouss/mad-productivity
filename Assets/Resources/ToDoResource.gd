@@ -56,7 +56,7 @@ func add_project(_name : String) -> int:
 		}
 	projects[_new_p_id] = project_data
 	project_top_id += 1
-	Defaults.save_todo_resource(self)
+	# Defaults.save_todo_resource(self)
 	return _new_p_id
 	
 	

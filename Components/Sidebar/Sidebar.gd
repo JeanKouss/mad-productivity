@@ -2,7 +2,7 @@ extends Panel
 
 @export var views_state_provider : Main
 
-var views_buttons : Dictionary = {
+@onready var views_buttons : Dictionary = {
 	'home' : %HomeButton,
 	'notes' : %NotesButton,
 	'time_tracks' : %TimeTracksButton,
@@ -25,7 +25,7 @@ signal settings_requested
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	views_state_provider.cur_view_changed.connect(_on_cur_view_changed)
-	views_state_provider.time_tracking_panel_opened.connect(_on_cur_view_changed)
+	views_state_provider.time_tracking_panel_toggle.connect(_on_time_tracking_panel_toggle)
 
 
 func _on_cur_view_changed(from:String, to:String) :

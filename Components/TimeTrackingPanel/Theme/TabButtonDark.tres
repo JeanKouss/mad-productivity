@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dq5nu7prcuvhu"]
+
+[ext_resource type="FontFile" uid="uid://cc7ubmfm007ke" path="res://Assets/Fonts/Righteous-Regular.ttf" id="1_5b5dv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v5tn"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btonw"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knk6t"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gafwo"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2d1a"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q0ys"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oecu"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[resource]
+TabButton/base_type = &"Button"
+TabButton/colors/font_color = Color(0.851, 0.851, 0.851, 0.25)
+TabButton/colors/font_focus_color = Color(0.851, 0.851, 0.851, 0.5)
+TabButton/colors/font_hover_color = Color(0.85098, 0.85098, 0.85098, 0.501961)
+TabButton/font_sizes/font_size = 15
+TabButton/fonts/font = ExtResource("1_5b5dv")
+TabButton/styles/focus = SubResource("StyleBoxFlat_4v5tn")
+TabButton/styles/hover = SubResource("StyleBoxFlat_btonw")
+TabButton/styles/normal = SubResource("StyleBoxFlat_knk6t")
+TabButtonActive/base_type = &"TabButton"
+TabButtonActive/colors/font_color = Color(0.729412, 0.87451, 0.2, 1)
+TabButtonActive/colors/font_focus_color = Color(0.729412, 0.87451, 0.2, 1)
+TabButtonActive/colors/font_hover_color = Color(0.729412, 0.87451, 0.2, 1)
+TabButtonActive/colors/font_pressed_color = Color(0.851, 0.851, 0.851, 0.25)
+TabButtonActive/styles/focus = SubResource("StyleBoxFlat_gafwo")
+TabButtonActive/styles/hover = SubResource("StyleBoxFlat_n2d1a")
+TabButtonActive/styles/normal = SubResource("StyleBoxFlat_5q0ys")
+TabButtonActive/styles/pressed = SubResource("StyleBoxFlat_3oecu")

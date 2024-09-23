@@ -28,8 +28,8 @@ func update_theme_values() -> void:
 	btn_active_col = highlight_colour
 	
 	#update the defaults
-	Defaults.btn_active_colour = btn_active_col
-	Defaults.btn_inactive_colour = btn_inactive_col
+	# Defaults.btn_active_colour = btn_active_col
+	# Defaults.btn_inactive_colour = btn_inactive_col
 	
 	# maths!
 	normal = primary_col
@@ -67,9 +67,10 @@ func set_color(which : int, new : Color) -> void:
 			# text color
 			text_color = new
 
-	Defaults.update_theme()
+	# Defaults.update_theme()
 #	Defaults.emit_signal("theme_changed")
 
 
 func save_theme() -> void:
-	ResourceSaver.save(self, Defaults.settings_res.THEME_SAVE_PATH)
+	# ResourceSaver.save(self, Defaults.settings_res.THEME_SAVE_PATH)
+	pass

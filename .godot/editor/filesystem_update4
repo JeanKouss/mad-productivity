@@ -1,5 +1,5 @@
+res://Components/TimeTrackingPanel/TimeTrackingPanel.tscn
+res://Components/TimeTrackingPanel/Theme/TabButtonDark.tres
 res://Main.tscn
 res://Components/Sidebar/Sidebar.tscn
-res://Components/Sidebar/SidebarButton.gd
-res://Components/Sidebar/Sidebar.gd
-res://Main.gd
+res://Components/TimeTrackingPanel/NormalTimeTracking.tscn

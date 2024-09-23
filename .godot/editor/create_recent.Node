@@ -1,5 +1,14 @@
-TextureButton
 MarginContainer
-Panel
+LineEdit
+Button
 VBoxContainer
+Label
+Control
+CenterContainer
+TabBar
+HBoxContainer
+TextureRect
+TabContainer
+Panel
+TextureButton
 CanvasLayer

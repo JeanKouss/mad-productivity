@@ -1,9 +1,0 @@
-[gd_resource type="FontFile" load_steps=2 format=2]
-
-[ext_resource type="FontFile" uid="uid://cc7ubmfm007ke" path="res://Assets/Fonts/Righteous-Regular.ttf" id="1"]
-
-[resource]
-size = 20
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )

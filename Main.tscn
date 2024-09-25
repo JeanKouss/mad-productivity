@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://btlc1mvge1xd2"]
+[gd_scene load_steps=4 format=3 uid="uid://btlc1mvge1xd2"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_ddfwt"]
 [ext_resource type="PackedScene" uid="uid://b8wp2a63mdlcm" path="res://Components/Sidebar/Sidebar.tscn" id="2_vpr1h"]
+[ext_resource type="PackedScene" uid="uid://xevie83l8kj0" path="res://Components/TimeTrackingPanel/TimeTrackingPanel.tscn" id="3_5pn5r"]
 
 [node name="Main" type="CanvasLayer"]
 script = ExtResource("1_ddfwt")
@@ -12,7 +13,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="Sidebar" parent="HBoxContainer" node_paths=PackedStringArray("views_state_provider") instance=ExtResource("2_vpr1h")]
 layout_mode = 2
 views_state_provider = NodePath("../..")
+
+[node name="TimeTrackingPanel" parent="HBoxContainer" instance=ExtResource("3_5pn5r")]
+layout_mode = 2

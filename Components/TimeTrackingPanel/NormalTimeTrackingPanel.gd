@@ -6,11 +6,9 @@ extends Control
 @onready var cancel_button = %CancelButton
 @onready var item_input = %ItemInput
 
+
 func _ready() -> void:
 	init_component()
-	pass
-
-func _process(_delta: float) -> void:
 	pass
 
 func init_component() :
@@ -47,13 +45,17 @@ func cancel_timer() :
 
 
 func _on_start_button_pressed() -> void:
+	start_timer()
 	pass
 
 func _on_pause_button_pressed() -> void:
+	pause_timer()
 	pass
 
 func _on_finish_button_pressed() -> void:
+	finish_timer()
 	pass
 
 func _on_cancel_button_pressed() -> void:
+	cancel_timer()
 	pass

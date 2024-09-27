@@ -6,6 +6,7 @@ extends Control
 @onready var cancel_button = %CancelButton
 @onready var item_input = %ItemInput
 
+var is_timer_active := false
 
 func _ready() -> void:
 	init_component()

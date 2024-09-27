@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd8yfe6sx70ie"]
+
+[ext_resource type="FontFile" uid="uid://cc7ubmfm007ke" path="res://Assets/Fonts/Righteous-Regular.ttf" id="1_737ct"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mukh5"]
+font = ExtResource("1_737ct")
+font_size = 24
+font_color = Color(0.540991, 0.54099, 0.54099, 1)
+
+[node name="Wip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WIP"
+label_settings = SubResource("LabelSettings_mukh5")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true

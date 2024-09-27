@@ -18,6 +18,6 @@ func toggle_time_tracking() :
 	if time_tracking.is_shown() :
 		time_tracking.hide_panel()
 		time_tracking_panel_toggle.emit(false)
-	else :
+	else : 
 		time_tracking.show_panel()
 		time_tracking_panel_toggle.emit(true)

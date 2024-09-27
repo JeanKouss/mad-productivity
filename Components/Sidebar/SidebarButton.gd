@@ -25,7 +25,7 @@ func unhighlight() : # Should be added to english dictonary 🙂
 	modulate = Color('#fff')
 
 func activate() :
-	modulate = AppTheme.get_color('button_active')
+	modulate = AppTheme.get_color('highlight')
 
 func deactivate() :
 	modulate = Color('#fff')
@@ -34,5 +34,6 @@ func _on_mouse_entered() :
 	highlight()
 	
 func _on_mouse_exited() :
-	unhighlight()
+	if not active :
+		unhighlight()
 	

@@ -53,9 +53,9 @@ border_color = Color(0.729412, 0.87451, 0.2, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h1nu"]
 content_margin_left = 6.0
-content_margin_top = 6.0
+content_margin_top = 7.0
 content_margin_right = 6.0
-content_margin_bottom = 6.0
+content_margin_bottom = 7.0
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 border_width_left = 1
 border_width_top = 1
@@ -65,9 +65,9 @@ border_color = Color(1, 1, 1, 0.806)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibe56"]
 content_margin_left = 6.0
-content_margin_top = 8.0
+content_margin_top = 7.0
 content_margin_right = 6.0
-content_margin_bottom = 8.0
+content_margin_bottom = 7.0
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 border_width_left = 1
 border_width_top = 1
@@ -79,12 +79,13 @@ border_color = Color(1, 1, 1, 0.5)
 Button/colors/font_color = Color(0.85098, 0.85098, 0.85098, 1)
 Button/colors/font_hover_color = Color(0.729412, 0.87451, 0.2, 1)
 Button/colors/font_pressed_color = Color(0.729412, 0.87451, 0.2, 1)
+Button/font_sizes/font_size = 15
 Button/fonts/font = ExtResource("1_rdw26")
 Button/styles/focus = SubResource("StyleBoxFlat_786gv")
 Button/styles/hover = SubResource("StyleBoxFlat_05g3i")
 Button/styles/normal = SubResource("StyleBoxFlat_buc36")
 Button/styles/pressed = SubResource("StyleBoxFlat_j4aqk")
-LineEdit/font_sizes/font_size = 14
+LineEdit/font_sizes/font_size = 13
 LineEdit/fonts/font = ExtResource("2_4vuev")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_7h1nu")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_ibe56")

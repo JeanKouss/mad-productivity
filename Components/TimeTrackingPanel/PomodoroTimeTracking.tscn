@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://3ykm1rf0bfev"]
+
+[ext_resource type="PackedScene" uid="uid://dd8yfe6sx70ie" path="res://Components/WIP/WIP.tscn" id="1_hp28s"]
+[ext_resource type="Script" path="res://Components/TimeTrackingPanel/PomodoroTimeTracking.gd" id="1_kvxwh"]
+
+[node name="PomodoroTimeTracking" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kvxwh")
+
+[node name="Wip" parent="." instance=ExtResource("1_hp28s")]
+layout_mode = 1

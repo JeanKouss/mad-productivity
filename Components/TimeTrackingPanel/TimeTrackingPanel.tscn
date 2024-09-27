@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://xevie83l8kj0"]
+[gd_scene load_steps=6 format=3 uid="uid://xevie83l8kj0"]
 
 [ext_resource type="Theme" uid="uid://dq5nu7prcuvhu" path="res://Components/TimeTrackingPanel/Theme/TabButtonDark.tres" id="1_7a7o1"]
 [ext_resource type="Script" path="res://Components/TimeTrackingPanel/TimeTrackingPanel.gd" id="1_lw4wm"]
+[ext_resource type="PackedScene" uid="uid://1i4wkabq5sfi" path="res://Components/TimeTrackingPanel/NormalTimeTracking.tscn" id="3_kiq3e"]
+[ext_resource type="PackedScene" uid="uid://3ykm1rf0bfev" path="res://Components/TimeTrackingPanel/PomodoroTimeTracking.tscn" id="4_80mr4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kmmi"]
 bg_color = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="TimeTrackingPanel" type="Panel"]
+clip_contents = true
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 245.0
+offset_right = 250.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1kmmi")
 script = ExtResource("1_lw4wm")
@@ -21,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
 
 [node name="TabHead" type="HBoxContainer" parent="TabContainer"]
 custom_minimum_size = Vector2(0, 45)
@@ -44,6 +48,17 @@ theme_type_variation = &"TabButton"
 text = "Pomodoro"
 clip_text = true
 
-[node name="TabBody" type="CenterContainer" parent="TabContainer"]
+[node name="TabBody" type="Control" parent="TabContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="NormalTimeTracking" parent="TabContainer/TabBody" instance=ExtResource("3_kiq3e")]
+layout_mode = 1
+size_flags_horizontal = 3
+
+[node name="PomodoroTimeTracking" parent="TabContainer/TabBody" instance=ExtResource("4_80mr4")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_down" from="TabContainer/TabHead/NormalTabButton" to="." method="_on_normal_tab_button_down"]
+[connection signal="button_down" from="TabContainer/TabHead/PomodoroTabButton" to="." method="_on_pomodoro_tab_button_down"]

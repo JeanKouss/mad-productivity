@@ -33,7 +33,7 @@ func _on_cur_view_changed(from:String, to:String) :
 	views_buttons[to].active = true
 
 func _on_time_tracking_panel_toggle(active:bool) :
-	%TimeTrakingButton.active = active
+	%TimeTrackingButton.active = active
 
 ## Buttons pressed signals
 

@@ -1,5 +1,8 @@
 extends Control
 
+signal timer_stated
+signal timer_stoped()
+
 @onready var start_button = %StartButton
 @onready var pause_button = %PauseButton
 @onready var finish_button = %FinishButton
@@ -7,6 +10,7 @@ extends Control
 @onready var item_input = %ItemInput
 
 var is_timer_active := false
+var total_elapsed_sec : int = 0
 
 func _ready() -> void:
 	init_component()
@@ -25,7 +29,8 @@ func start_timer() :
 	pause_button.visible = true
 	finish_button.visible = true
 	cancel_button.visible = true
-	pass
+	total_elapsed_sec = 0
+	%Timer.start()
 
 func pause_timer() :
 	pause_button.text = 'Continue'
@@ -45,6 +50,9 @@ func cancel_timer() :
 	cancel_button.visible = false
 
 
+func update_time_label() :
+	pass
+
 func _on_start_button_pressed() -> void:
 	start_timer()
 	pass
@@ -59,4 +67,8 @@ func _on_finish_button_pressed() -> void:
 
 func _on_cancel_button_pressed() -> void:
 	cancel_timer()
+	pass
+
+func _on_timer_timeout() -> void:
+	total_elapsed_sec += 1
 	pass

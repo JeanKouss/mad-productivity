@@ -75,7 +75,11 @@ layout_mode = 2
 theme = ExtResource("2_wpqvl")
 text = "Item name"
 
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/FinishButton" to="." method="_on_finish_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
